@@ -76,7 +76,7 @@ foreach ($client->parseEvents() as $event) {
                                )
                             )
                         	));
-                           break;
+           
                         
                         
                         case B:

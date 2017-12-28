@@ -66,7 +66,7 @@ foreach ($client->parseEvents() as $event) {
                                )
                             )
                         	));
-                            switch ($m_message) {
+                           
                         case a:
                             $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
@@ -77,7 +77,7 @@ foreach ($client->parseEvents() as $event) {
                                )
                             )
                         	));
-                        break;}
+                        break;
                         break;
                         case B:
                             $client->replyMessage(array(

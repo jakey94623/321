@@ -53,11 +53,11 @@ foreach ($client->parseEvents() as $event) {
 3. 選擇「魔法石商店」。
 4. 如果出現一個對話窗要求確認交易，玩家可按 「確認」 恢復交易。
 5. 成功恢復交易後，將顯示已恢復交易單據的數量，及已恢復魔法石的總數量。";
-                    $a="請輸入以下的代號來查詢相關服務!!\nA:客服服務\nB:遊戲介紹";
+                    $a="請輸入以下的代號來查詢相關服務!!\n1:客服服務\n2:遊戲介紹";
                 	$m_message = $message['text'];
                     
                       switch ($m_message) {
-                        case A:                          
+                        case 1:                          
                            $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
                              'messages' => array(
@@ -68,7 +68,7 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                            break; 
-                          case a:
+                          case ($m_message==A || $m_message== a):
                             $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                            'messages' => array(
@@ -167,7 +167,7 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                           break; 
-                          case b:
+                          case ($m_message==B || $m_message== b):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -222,7 +222,7 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                           break;
-                        case B:
+                        case 2:
                             $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
                              'messages' => array(

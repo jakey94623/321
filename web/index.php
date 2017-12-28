@@ -186,7 +186,7 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                           break; 
-                          case B1:
+                          case ($m_message==B1 || $m_message== b1):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(

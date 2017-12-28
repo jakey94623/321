@@ -56,22 +56,161 @@ foreach ($client->parseEvents() as $event) {
                     $a="請輸入以下的代號來查詢相關服務!!\nA:客服服務\nB:遊戲介紹";
                 	$m_message = $message['text'];
                     
-                           switch ($m_message) {
+                      switch ($m_message) {
                         case A:    
-                           $message == $Q ;
-                           case a:
+                           $client->replyMessage(array(
+                             'replyToken' => $event['replyToken'],
+                             'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $Q
+                               )
+                            )
+                        	));
+                           break; 
+                           case A1:
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
                                 array(
                                    'type' => 'text',
-                                   'text' => $Q1
+                                   'text' => $A1
                                )
                             )
                         	));
-           
-                        
-                        
+                          break; 
+                          case A2:
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A2
+                               )
+                            )
+                        	));
+                          break; 
+                          case A3:
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A3
+                               )
+                            )
+                        	));
+                          break; 
+                          case A4:
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A4
+                               )
+                            )
+                        	));
+                          break; 
+                          case A5:
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A5
+                               )
+                            )
+                        	));
+                          break; 
+                          case A6:
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A6
+                               )
+                            )
+                        	));
+                          break; 
+                          case A7:
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A7
+                               )
+                            )
+                        	));
+                          break; 
+                          case A8:
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A8
+                               )
+                            )
+                        	));
+                          break; 
+                          case b:
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $Q2
+                               )
+                            )
+                        	));
+                          break; 
+                          case B1:
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $B1
+                               )
+                            )
+                        	));
+                          break; 
+                          case B2:
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $B2
+                               )
+                            )
+                        	));
+                          break; 
+                          case B3:
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $B3
+                               )
+                            )
+                        	));
+                          break;
+                          case B4:
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $B4
+                               )
+                            )
+                        	));
+                          break;
                         case B:
                             $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
@@ -82,7 +221,51 @@ foreach ($client->parseEvents() as $event) {
                                )
                             )
                         	));
-                        break;    
+                        break; 
+                        case I1:
+                            $client->replyMessage(array(
+                             'replyToken' => $event['replyToken'],
+                             'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $I1                            
+                             )
+                            )
+                        	));
+                        break; 
+                        case I2:
+                            $client->replyMessage(array(
+                             'replyToken' => $event['replyToken'],
+                             'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $I2
+                               )
+                            )
+                        	));
+                        break; 
+                        case I3:
+                            $client->replyMessage(array(
+                             'replyToken' => $event['replyToken'],
+                             'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $I3
+                               )
+                            )
+                        	));
+                        break; 
+                        case I4:
+                            $client->replyMessage(array(
+                             'replyToken' => $event['replyToken'],
+                             'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $I4
+                               )
+                            )
+                        	));
+                        break; 
                         default:
                             $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],
@@ -94,9 +277,7 @@ foreach ($client->parseEvents() as $event) {
                             )
                     	    ));
                     }
-                     
                     break;
-                
             }
             break;
         default:

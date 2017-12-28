@@ -79,7 +79,7 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                             break; 
-                           case (A1 || a1):
+                           case ("A1" || "a1"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(

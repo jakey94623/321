@@ -59,7 +59,7 @@ foreach ($client->parseEvents() as $event) {
                       switch ($m_message) {
                         case A:    
                               
-                              while ( $m_message=="a" ) {
+                              do {
 　                               $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
                              'messages' => array(
@@ -69,7 +69,7 @@ foreach ($client->parseEvents() as $event) {
                                )
                             )
                         	));
-                              }
+                              }while ($m_message=="a");
                               
                            $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],

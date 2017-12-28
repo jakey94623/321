@@ -58,12 +58,7 @@ foreach ($client->parseEvents() as $event) {
                     
                            switch ($m_message) {
                         case A:    
-                            $client->replyMessage(array(
-                             'replyToken' => $event['replyToken'],
-                             'messages' => array(
-                             array(
-                                   'type' => 'text',
-                                   'text' => $Q
+                           $message == $Q
                                )
                             )
                         	));case a:

@@ -79,7 +79,7 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                             break; 
-                          case a1:   
+                           case a1:   
                            case A1:
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
@@ -91,7 +91,8 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                           break; 
-                          case (A2 || a2):
+                          case a2: 
+                          case A2:
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -102,7 +103,8 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                           break; 
-                          case (A3 || a3):
+                          case a3: 
+                          case A3:
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -113,7 +115,8 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                           break; 
-                          case (A4 || a4):
+                          case a4: 
+                          case A4:
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -124,7 +127,8 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                           break; 
-                          case (A5 || a5):
+                          case a5: 
+                          case A5:
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -135,7 +139,8 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                           break; 
-                          case (A6 || a6):
+                          case a6: 
+                          case A6:
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -146,7 +151,8 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                           break; 
-                          case (A7 || a7):
+                          case a7: 
+                          case A7:
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -157,7 +163,8 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                           break; 
-                          case (A8 || a8):
+                          case a8: 
+                          case A8:
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(

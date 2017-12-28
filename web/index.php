@@ -79,8 +79,17 @@ foreach ($client->parseEvents() as $event) {
                         	));
                         break;}
                         break;
-                            
-                            
+                        case B:
+                            $client->replyMessage(array(
+                             'replyToken' => $event['replyToken'],
+                             'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $I
+                               )
+                            )
+                        	));
+                        break;    
                         default:
                             $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],

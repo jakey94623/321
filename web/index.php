@@ -66,7 +66,31 @@ foreach ($client->parseEvents() as $event) {
                                )
                             )
                         	));
+                            switch ($m_message) {
+                        case A:
+                            $client->replyMessage(array(
+                             'replyToken' => $event['replyToken'],
+                             'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $Q1
+                               )
+                            )
+                        	));
+                        break;}
                         break;
+                            
+                            
+                        default:
+                            $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'text',
+                                    'text' => $a
+                                    )
+                            )
+                    	    ));
                     }
                      
                     break;

@@ -63,10 +63,7 @@ foreach ($client->parseEvents() as $event) {
                              array(
                                    'type' => 'text',
                                    'text' => $Q
-                                 array(
-                                    'type' => 'uri',
-                                    'label' => '查看詳情'
-                                    )
+                                    'label' => '查看詳情'                                 
                                )
                             )
                         	));                           break; 

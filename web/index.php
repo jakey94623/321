@@ -57,7 +57,7 @@ foreach ($client->parseEvents() as $event) {
                 	$m_message = $message['text'];
                     switch ($m_message) {
                         case 1:                          
-                           sendTextMessage("0 0 ");
+                           sendTextMessage(result.content.from, "傳送您的位置來獲得天氣訊息");
                            break; 
                           case ($m_message==A || $m_message== a):
                             $client->replyMessage(array(

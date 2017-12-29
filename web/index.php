@@ -55,7 +55,9 @@ foreach ($client->parseEvents() as $event) {
 5. 成功恢復交易後，將顯示已恢復交易單據的數量，及已恢復魔法石的總數量。";
                     $a="請輸入以下的代號來查詢相關服務!!\n1:客服服務\n2:遊戲介紹";
                 	$m_message = $message['text'];
-                    
+                    bot.on('message', function(event) {
+  console.log(event); //把收到訊息的 event 印出來看看
+});
                       switch ($m_message) {
                         case 1:                          
                            echo $Q;

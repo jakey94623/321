@@ -59,6 +59,7 @@ foreach ($client->parseEvents() as $event) {
                       switch ($m_message) {
                         case 1:                          
                            echo $Q;
+                              echo "0 0 ";
                            break; 
                           case ($m_message==A || $m_message== a):
                             $client->replyMessage(array(

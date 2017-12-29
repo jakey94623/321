@@ -55,10 +55,240 @@ foreach ($client->parseEvents() as $event) {
 5. 成功恢復交易後，將顯示已恢復交易單據的數量，及已恢復魔法石的總數量。";
                     $a="請輸入以下的代號來查詢相關服務!!\n1:客服服務\n2:遊戲介紹";
                 	$m_message = $message['text'];
-                    bot.on('m_message', function(event) {
-  console.log(event); //把收到訊息的 event 印出來看看
-});
-                      
+                    switch ($m_message) {
+                        case 1:                          
+                           echo $Q;
+                              $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                           'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $Q
+                               )
+                            )
+                        	));
+                           break; 
+                          case ($m_message==A || $m_message== a):
+                            $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                           'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $Q1
+                               )
+                            )
+                        	));
+                            break; 
+                           case ($m_message==A1 || $m_message== a1):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A1
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==A2 || $m_message== a2):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A2
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==A3 || $m_message== a3):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A3
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==A4 || $m_message== a4):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A4
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==A5 || $m_message== a5):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A5
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==A6 || $m_message== a6):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A6
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==A7 || $m_message== a7):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A7
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==A8 || $m_message== a8):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $A8
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==B || $m_message== b):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $Q2
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==B1 || $m_message== b1):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $B1
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==B2 || $m_message== b2):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $B2
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==B3 || $m_message== b3):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $B3
+                               )
+                            )
+                        	));
+                          break;
+                          case ($m_message==B4 || $m_message== b4):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $B4
+                               )
+                            )
+                        	));
+                          break;
+                        case 2:
+                            $client->replyMessage(array(
+                             'replyToken' => $event['replyToken'],
+                             'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $I
+                               )
+                            )
+                        	));
+                        break; 
+                        case ($m_message==I1 || $m_message== i1):
+                            $client->replyMessage(array(
+                             'replyToken' => $event['replyToken'],
+                             'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $I1                            
+                             )
+                            )
+                        	));
+                        break; 
+                        case ($m_message==I2 || $m_message== i2):
+                            $client->replyMessage(array(
+                             'replyToken' => $event['replyToken'],
+                             'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $I2
+                               )
+                            )
+                        	));
+                        break; 
+                        case ($m_message==I3 || $m_message== i3):
+                            $client->replyMessage(array(
+                             'replyToken' => $event['replyToken'],
+                             'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $I3
+                               )
+                            )
+                        	));
+                        break; 
+                        case ($m_message==I4 || $m_message== i4):
+                            $client->replyMessage(array(
+                             'replyToken' => $event['replyToken'],
+                             'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $I4
+                               )
+                            )
+                        	));
+                        break; 
+                        default:
+                            $client->replyMessage(array(
+                            'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                    'type' => 'text',
+                                    'text' => $a
+                                    )
+                            )
+                    	    ));
+                    }
+                    break;a      
             }
             break;
         default:

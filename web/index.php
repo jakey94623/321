@@ -68,7 +68,7 @@ foreach ($client->parseEvents() as $event) {
                             )
           	));  $x=123;
                              break; 
-                          case ($m_message==A || $m_message== a) &&($x=123):
+                          case (($m_message==A || $m_message== a) &&($x=123)):
                             $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                            'messages' => array(

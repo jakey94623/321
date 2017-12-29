@@ -30,7 +30,6 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
-                    $x;
                     $Q="請問你要查詢\nA:常見問題\nB:儲值問題";$I="I1:特別任務\nI2:通關獎賞\nI3:潛能解放\nI4:異空轉生";
                     $I1="特別任務將顯示於世界地圖的左上角，不同時段有不同的戰鬥任務，召喚師可挑戰更強的對手來訓練召喚獸，也可搜集強化及進化元素。
 
@@ -56,7 +55,7 @@ foreach ($client->parseEvents() as $event) {
 5. 成功恢復交易後，將顯示已恢復交易單據的數量，及已恢復魔法石的總數量。";
                     $a="請輸入以下的代號來查詢相關服務!!\n1:客服服務\n2:遊戲介紹";
                 	$m_message = $message['text'];
-                    $smbit = 1 ;
+
                     switch ($m_message) {
                         case 1:                          
                             $client->replyMessage(array(
@@ -67,10 +66,10 @@ foreach ($client->parseEvents() as $event) {
                                    'text' => $Q     
                                )
                             )
-                                $smbit = 0;
-                        	));      
+                      
+          	));      
                              break; 
-                          case ($m_message==A || $m_message== a)&&($smbit ==0) :
+                          case ($m_message==A || $m_message== a) :
                             $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                            'messages' => array(

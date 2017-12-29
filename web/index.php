@@ -65,11 +65,10 @@ foreach ($client->parseEvents() as $event) {
                                    'text' => $Q
                                  array(
                                     'type' => 'uri',
-                                    'label' => '查看詳情',
-                                    'uri' => $item['gsx$url']['$t'],
-                                    ),
-                               ),
-                            ),
+                                    'label' => '查看詳情'
+                                    )
+                               )
+                            )
                         	));                           break; 
                           case ($m_message==A || $m_message== a):
                             $client->replyMessage(array(

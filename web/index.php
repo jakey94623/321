@@ -288,7 +288,7 @@ foreach ($client->parseEvents() as $event) {
                             )
                     	    ));
                     }
-                    break;a      
+                    break;
             }
             break;
         default:

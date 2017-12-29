@@ -62,8 +62,7 @@ foreach ($client->parseEvents() as $event) {
                            'messages' => array(
                              array(
                                    'type' => 'text',
-                                   'text' => $Q
-                                    'label' => '查看詳情'                                 
+                                   'text' => $Q                              
                                )
                             )
                         	));                           break; 

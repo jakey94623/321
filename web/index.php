@@ -65,9 +65,9 @@ foreach ($client->parseEvents() as $event) {
                                    'type' => 'text',
                                    'text' => $Q     
                                )
-                            )$smbit="sss";
+                            )
                       
-          	));      
+          	));      $smbit='sss'
                              break; 
                           case ($m_message==A || $m_message== a)&&($smbit="sss") :
                             $client->replyMessage(array(

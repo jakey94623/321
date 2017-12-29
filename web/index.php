@@ -56,7 +56,7 @@ foreach ($client->parseEvents() as $event) {
 5. 成功恢復交易後，將顯示已恢復交易單據的數量，及已恢復魔法石的總數量。";
                     $a="請輸入以下的代號來查詢相關服務!!\n1:客服服務\n2:遊戲介紹";
                 	$m_message = $message['text'];
-                    if(($m_message)==1){
+                    $smbit = 1 ;
                     switch ($m_message) {
                         case 1:                          
                             $client->replyMessage(array(
@@ -67,9 +67,10 @@ foreach ($client->parseEvents() as $event) {
                                    'text' => $Q     
                                )
                             )
+                                $smbit = 0;
                         	));      
                              break; 
-                          case ($m_message==A || $m_message== a):
+                          case ($m_message==A || $m_message== a)&&($smbit ==0) :
                             $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                            'messages' => array(
@@ -91,20 +92,6 @@ foreach ($client->parseEvents() as $event) {
                             )
                         	));
                           break; 
-                    }
-                     else{
-                     $client->replyMessage(array(
-                           'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                   'type' => 'text',
-                                   'text' => $a
-                               )
-                            )
-                        	));
-                     }       
-                            
-                            
                             
                           case ($m_message==A2 || $m_message== a2):
                                    $client->replyMessage(array(

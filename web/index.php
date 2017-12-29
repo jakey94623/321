@@ -30,6 +30,7 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
+                    $x;
                     $Q="請問你要查詢\nA:常見問題\nB:儲值問題";$I="I1:特別任務\nI2:通關獎賞\nI3:潛能解放\nI4:異空轉生";
                     $I1="特別任務將顯示於世界地圖的左上角，不同時段有不同的戰鬥任務，召喚師可挑戰更強的對手來訓練召喚獸，也可搜集強化及進化元素。
 
@@ -62,11 +63,12 @@ foreach ($client->parseEvents() as $event) {
                            'messages' => array(
                              array(
                                    'type' => 'text',
-                                   'text' => $Q                              
+                                   'text' => $Q     
                                )
                             )
-                        	));                           break; 
-                          case ($m_message==A || $m_message== a):
+                        	));      $x==$Q;
+                            break; 
+                          case ($m_message==A || $m_message== a  && $x==$Q):
                             $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                            'messages' => array(

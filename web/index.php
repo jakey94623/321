@@ -64,12 +64,10 @@ foreach ($client->parseEvents() as $event) {
                              array(
                                    'type' => 'text',
                                    'text' => $Q     
-                               )
-                            )
-          	)); 
-                             break; 
-                          case ($m_message==A || $m_message== a):
-                            $client->replyMessage(array(
+                               ),
+                            ),
+          	)),
+               if($m_message==A || $m_message== a){   $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                            'messages' => array(
                              array(
@@ -77,8 +75,9 @@ foreach ($client->parseEvents() as $event) {
                                    'text' => $Q1
                                )
                             )
-                        	));
-                            break; 
+                        	));}              
+                             break; 
+                         
                            case ($m_message==A1 || $m_message== a1):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],

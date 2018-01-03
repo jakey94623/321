@@ -65,11 +65,7 @@ foreach ($client->parseEvents() as $event) {
                                    'type' => 'text',
                                    'text' => $Q     
                                ),
-                               array(
-                                'type' => 'sticker',
-                                'packageId' => '1',
-                                'stickerId' => '2',
-                            ),
+                               
                             ),
                                 
           	));

@@ -968,7 +968,28 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break;
-
+                             case ($m_message==G18 || $m_message== g18):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $G18
+                               )
+                            )
+                        	));
+                          break;
+                             case ($m_message==G19 || $m_message== g19):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $G19
+                               )
+                            )
+                        	));
+                          break;
                         default:
                             $client->replyMessage(array(
                             'replyToken' => $event['replyToken'],

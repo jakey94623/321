@@ -65,12 +65,13 @@ foreach ($client->parseEvents() as $event) {
                                    'type' => 'text',
                                    'text' => $Q     
                                ),
-                            ),
-                                array(
+                               array(
                                 'type' => 'sticker',
                                 'packageId' => '1',
                                 'stickerId' => '2',
                             ),
+                            ),
+                                
           	));
                         case ($m_message==A || $m_message== a): 
                             $client->replyMessage(array(

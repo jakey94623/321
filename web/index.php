@@ -670,7 +670,29 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break;
-                        
+                        case ($m_message==N4 || $m_message== n4 $m_message=="全體攻擊" || $m_message=="全體 攻擊" || $m_message=="攻擊全體" || $m_message=="攻擊 全體"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N4
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==N5 || $m_message== n5 || $m_message=="強化符石" || $m_message=="強化 符石" || $m_message=="符石強化" || $m_message=="符石 強化"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N5
+                               )
+                            )
+                        	));
+                          break; 
+
                            case 4:                          
                             $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],

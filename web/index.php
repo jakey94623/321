@@ -527,7 +527,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                         break; 
-                        case ($m_message==I2 || $m_message== i2):
+                        case ($m_message==I2 || $m_message== i2 || $m_message=="通關獎賞" || $m_message=="通關 獎賞" || $m_message=="獎賞 通關" || $m_message=="獎賞通關"):
                             $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
                              'messages' => array(
@@ -538,7 +538,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                         break; 
-                        case ($m_message==I3 || $m_message== i3):
+                        case ($m_message==I3 || $m_message== i3 || $m_message=="潛能解放" || $m_message=="潛能 解放" || $m_message=="解放潛能" || $m_message=="解放 潛能"):
                             $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
                              'messages' => array(
@@ -549,7 +549,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                         break; 
-                        case ($m_message==I4 || $m_message== i4):
+                        case ($m_message==I4 || $m_message== i4 || $m_message=="異空轉生" || $m_message=="異空 轉生" || $m_message=="轉生異空" || $m_message=="轉生 異空"):
                             $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
                              'messages' => array(
@@ -560,7 +560,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                         break; 
-                            case ($m_message==I5 || $m_message== i5):
+                            case ($m_message==I5 || $m_message== i5 || $m_message=="廣播通知" || $m_message=="廣播 通知" || $m_message=="通知廣播" || $m_message=="通知 廣播"):
                             $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
                              'messages' => array(
@@ -571,7 +571,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                         break; 
-                            case ($m_message==I6 || $m_message== i6):
+                            case ($m_message==I6 || $m_message== i6 || $m_message=="昇華系統" || $m_message=="昇華 系統" || $m_message=="系統昇華" || $m_message=="系統昇華"):
                             $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
                              'messages' => array(
@@ -582,7 +582,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                         break; 
-                            case ($m_message==I7 || $m_message== i7):
+                            case ($m_message==I7 || $m_message== i7 || $m_message=="信箱系統" || $m_message=="信箱 系統" || $m_message=="系統信箱" || $m_message=="系統 信箱"):
                             $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
                              'messages' => array(
@@ -593,7 +593,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                         break; 
-                            case ($m_message==I8 || $m_message== i8):
+                            case ($m_message==I8 || $m_message== i8 || $m_message=="龍刻脈動" || $m_message=="龍刻 脈動" || $m_message=="脈動龍刻" || $m_message=="脈動 龍刻"):
                             $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
                              'messages' => array(
@@ -604,7 +604,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                         break; 
-                            case ($m_message==I9 || $m_message== i9):
+                            case ($m_message==I9 || $m_message== i9 || $m_message=="龍刻熔合" || $m_message=="龍刻 熔合" || $m_message=="熔合龍刻" || $m_message=="熔合 龍刻"):
                             $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
                              'messages' => array(
@@ -615,7 +615,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                         break; 
-                            case ($m_message==I10 || $m_message== i10):
+                            case ($m_message==I10 || $m_message== i10 || $m_message=="稱號系統" || $m_message=="稱號 系統" || $m_message=="系統稱號" || $m_message=="系統 稱號"):
                             $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
                              'messages' => array(
@@ -637,7 +637,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                              )  
           	));
                              break; 
-                            case ($m_message==N1 || $m_message== n1):
+                            case ($m_message==N1 || $m_message== n1 || $m_message=="移動符石" || $m_message=="移動 符石" || $m_message=="符石 移動" || $m_message=="符石移動"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -649,7 +649,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                         	));
                           break; 
                             
-                          case ($m_message==N2 || $m_message== n2):
+                          case ($m_message==N2 || $m_message== n2 || $m_message=="連擊加成" || $m_message=="連擊 加成" || $m_message=="加成 連擊" || $m_message=="加成連擊"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -660,7 +660,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==N3 || $m_message== n3):
+                          case ($m_message==N3 || $m_message== n3 || $m_message=="攻擊充能" || $m_message=="攻擊 充能" || $m_message=="充能攻擊" || $m_message=="充能 攻擊"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -671,7 +671,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==N4 || $m_message== n4):
+                          case ($m_message==N4 || $m_message== n4 $m_message=="全體攻擊" || $m_message=="全體 攻擊" || $m_message=="攻擊全體" || $m_message=="攻擊 全體"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -682,7 +682,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==N5 || $m_message== n5):
+                          case ($m_message==N5 || $m_message== n5 || $m_message=="強化符石" || $m_message=="強化 符石" || $m_message=="符石強化" || $m_message=="符石 強化"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -693,7 +693,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==N6 || $m_message== n6):
+                          case ($m_message==N6 || $m_message== n6 || $m_message=="技能發動" || $m_message=="技能 發動" || $m_message=="發動技能" || $m_message=="發動技能"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -704,7 +704,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==N7 || $m_message== n7):
+                          case ($m_message==N7 || $m_message== n7 || $m_message=="屬性相剋" || $m_message=="屬性 相剋" || $m_message=="相剋屬性" || $m_message=="相剋 屬性"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -715,7 +715,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==N8 || $m_message== n8):
+                          case ($m_message==N8 || $m_message== n8 || $m_message=="相生相剋" || $m_message=="相生 相剋" || $m_message=="相剋相生" || $m_message=="相剋 相生"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -726,7 +726,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                         break; 
-                        case ($m_message==N9 || $m_message== n9):
+                        case ($m_message==N9 || $m_message== n9 || $m_message=="強化合成" || $m_message=="強化 合成" || $m_message=="合成強化" || $m_message=="合成 強化"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -737,7 +737,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                         break; 
-                        case ($m_message==N10 || $m_message== n10):
+                        case ($m_message==N10 || $m_message== n10 || $m_message=="技能強化" || $m_message=="技能 強化" || $m_message=="強化技能" || $m_message=="強化 技能"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -748,7 +748,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                         break; 
-                        case ($m_message==N11 || $m_message== n11):
+                        case ($m_message==N11 || $m_message== n11 || $m_message=="進化合成" || $m_message=="進化 合成" || $m_message=="合成進化" || $m_message=="合成 進化"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(

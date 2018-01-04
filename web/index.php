@@ -516,7 +516,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                         break; 
                        
 
-                        case ($m_message==I1 || $m_message== i1):
+                        case ($m_message==I1 || $m_message== i1 || $m_message=="特別任務" || $m_message=="特別 任務" || $m_message=="任務 特別" || $m_message=="任務特別"):
                             $client->replyMessage(array(
                              'replyToken' => $event['replyToken'],
                              'messages' => array(

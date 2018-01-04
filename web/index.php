@@ -659,17 +659,6 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==N3 || $m_message== n3 || $m_message=="攻擊充能" || $m_message=="攻擊 充能" || $m_message=="充能攻擊" || $m_message=="充能 攻擊"):
-                                   $client->replyMessage(array(
-                           'replyToken' => $event['replyToken'],
-                            'messages' => array(
-                                array(
-                                   'type' => 'text',
-                                   'text' => $N3
-                               )
-                            )
-                        	));
-                          break; 
 
                            case 4:                          
                             $client->replyMessage(array(

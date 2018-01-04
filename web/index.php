@@ -215,7 +215,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));              
                              break; 
-                           case ($m_message==A1 || $m_message== a1):
+                           case ($m_message==A1 || $m_message== a1 || $m_message=="魔法石 用途" || $m_message=="用途 魔法石" || $m_message=="魔法石用途" || $m_message=="用途魔法石" || $m_message=="怎用魔法石"   || $m_message=="魔法石怎用"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -227,7 +227,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                         	));
                           break; 
                             
-                          case ($m_message==A2 || $m_message== a2):
+                          case ($m_message==A2 || $m_message== a2||$m_message=="魔法石 購買" || $m_message=="購買 魔法石" || $m_message=="魔法石購買" || $m_message=="購買魔法石" || $m_message=="如何買魔法石" || $m_message=="魔法石怎買"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -238,7 +238,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==A3 || $m_message== a3):
+                          case ($m_message==A3 || $m_message== a3|| $m_message=="魔法石可給別人嗎" || $m_message=="魔法石可以送人嗎" || $m_message=="送人魔法石" || $m_message=="魔法石送人" || $m_message=="魔法石轉移" || $m_message=="轉移魔法石"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -249,7 +249,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==A4 || $m_message== a4):
+                          case ($m_message==A4 || $m_message== a4|| $m_message=="怎麼綁定" || $m_message=="如何綁定" || $m_message=="怎麼綁定帳號" || $m_message=="如何綁定帳號" || $m_message=="帳號綁定"   || $m_message=="綁定帳號"  || $m_message=="如何進行綁定"  || $m_message=="帳號怎麼綁定"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -260,7 +260,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==A5 || $m_message== a5):
+                          case ($m_message==A5 || $m_message== a5|| $m_message=="可否更換用作綁定的社交平台帳戶" || $m_message=="社交平台" || $m_message=="fb"|| $m_message=="FB" || $m_message=="google " || $m_message=="Google" || $m_message=="GOOGLE" || $m_message=="綁平台" || $m_message=="綁FB" || $m_message=="綁fb"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -271,7 +271,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==A6 || $m_message== a6):
+                          case ($m_message==A6 || $m_message== a6||$m_message=="如何註冊新遊戲帳戶開始遊戲" || $m_message=="如何註冊" || $m_message=="怎麼註冊" || $m_message=="如何開始遊戲" || $m_message=="遊戲怎麼註冊" || $m_message=="遊戲如何註冊" || $m_message=="註冊新遊戲"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -282,7 +282,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==A7 || $m_message== a7):
+                          case ($m_message==A7 || $m_message== a7|| $m_message=="為什麼找不到綁定帳戶的選項" || $m_message=="綁定帳戶的選項" || $m_message=="找不到綁定帳戶的選項" || $m_message=="找不到綁定帳戶" ):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -293,7 +293,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==A8 || $m_message== a8):
+                          case ($m_message==A8 || $m_message== a8|| $m_message=="如果我的帳戶不見了，而又沒有進行綁定怎麼辦" || $m_message=="如果我的帳戶不見了" || $m_message=="進行綁定怎麼辦" || $m_message=="帳戶不見了" || $m_message=="沒有進行綁定怎麼辦" || $m_message=="沒有綁定"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -304,7 +304,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                            case ($m_message==A9 || $m_message== a9):
+                            case ($m_message==A9 || $m_message== a9||$m_message=="為什麼會收到違規警告" || $m_message=="違規警告” || $m_message=="收到違規"  || $m_message=="收到警告"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(
@@ -316,7 +316,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                         	));
                           break; 
                             
-                          case ($m_message==A10 || $m_message== a10):
+                          case ($m_message==A10 || $m_message== a10 || $m_message=="為什麼無法使用錄影功能"  || $m_message=="無法使用錄影"  || $m_message=="無法使用錄影功能"  || $m_message=="錄影功能壞掉"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(

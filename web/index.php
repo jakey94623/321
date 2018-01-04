@@ -637,10 +637,129 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                              )  
           	));
                              break; 
-
+                            case ($m_message==N1 || $m_message== n1 || $m_message=="移動符石" || $m_message=="移動 符石" || $m_message=="符石 移動" || $m_message=="符石移動"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N1
+                               )
+                            )
+                        	));
+                          break; 
                             
-                            
-                            case 4:                          
+                          case ($m_message==N2 || $m_message== n2 || $m_message=="連擊加成" || $m_message=="連擊 加成" || $m_message=="加成 連擊" || $m_message=="加成連擊"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N2
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==N3 || $m_message== n3 || $m_message=="攻擊充能" || $m_message=="攻擊 充能" || $m_message=="充能攻擊" || $m_message=="充能 攻擊"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N3
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==N4 || $m_message== n4 $m_message=="全體攻擊" || $m_message=="全體 攻擊" || $m_message=="攻擊全體" || $m_message=="攻擊 全體"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N4
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==N5 || $m_message== n5 || $m_message=="強化符石" || $m_message=="強化 符石" || $m_message=="符石強化" || $m_message=="符石 強化"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N5
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==N6 || $m_message== n6 || $m_message=="技能發動" || $m_message=="技能 發動" || $m_message=="發動技能" || $m_message=="發動技能"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N6
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==N7 || $m_message== n7 || $m_message=="屬性相剋" || $m_message=="屬性 相剋" || $m_message=="相剋屬性" || $m_message=="相剋 屬性"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N7
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==N8 || $m_message== n8 || $m_message=="相生相剋" || $m_message=="相生 相剋" || $m_message=="相剋相生" || $m_message=="相剋 相生"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N8
+                               )
+                            )
+                        	));
+                        break; 
+                        case ($m_message==N9 || $m_message== n9 || $m_message=="強化合成" || $m_message=="強化 合成" || $m_message=="合成強化" || $m_message=="合成 強化"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N9
+                               )
+                            )
+                        	));
+                        break; 
+                        case ($m_message==N10 || $m_message== n10 || $m_message=="技能強化" || $m_message=="技能 強化" || $m_message=="強化技能" || $m_message=="強化 技能"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N10
+                               )
+                            )
+                        	));
+                        break; 
+                        case ($m_message==N11 || $m_message== n11 || $m_message=="進化合成" || $m_message=="進化 合成" || $m_message=="合成進化" || $m_message=="合成 進化"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N11
+                               )
+                            )
+                        	));
+                        break;                            
+                           case 4:                          
                             $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                            'messages' => array(

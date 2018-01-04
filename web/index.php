@@ -514,28 +514,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                         break; 
-                        case ($m_message=="系統" ): 
-                            $client->replyMessage(array(
-                           'replyToken' => $event['replyToken'],
-                           'messages' => array(
-                             array(
-                                   'type' => 'text',
-                                   'text' => $I6
-                               )
-                            )
-                        	));              
-                             break;
-                       case ($m_message=="龍刻"): 
-                            $client->replyMessage(array(
-                           'replyToken' => $event['replyToken'],
-                           'messages' => array(
-                             array(
-                                   'type' => 'text',
-                                   'text' => $I8
-                               )
-                            )
-                        	));              
-                             break;
+                       
 
                         case ($m_message==I1 || $m_message== i1):
                             $client->replyMessage(array(

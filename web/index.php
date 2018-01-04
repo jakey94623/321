@@ -648,8 +648,62 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                            
-                         
+                                                    case ($m_message==N2 || $m_message== n2 || $m_message=="連擊加成" || $m_message=="連擊 加成" || $m_message=="加成 連擊" || $m_message=="加成連擊"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N2
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==N3 || $m_message== n3 || $m_message=="攻擊充能" || $m_message=="攻擊 充能" || $m_message=="充能攻擊" || $m_message=="充能 攻擊"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N3
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==N4 || $m_message== n4 $m_message=="全體攻擊" || $m_message=="全體 攻擊" || $m_message=="攻擊全體" || $m_message=="攻擊 全體"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N4
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==N5 || $m_message== n5 || $m_message=="強化符石" || $m_message=="強化 符石" || $m_message=="符石強化" || $m_message=="符石 強化"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N5
+                               )
+                            )
+                        	));
+                          break; 
+                          case ($m_message==N6 || $m_message== n6 || $m_message=="技能發動" || $m_message=="技能 發動" || $m_message=="發動技能" || $m_message=="發動技能"):
+                                   $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                            'messages' => array(
+                                array(
+                                   'type' => 'text',
+                                   'text' => $N6
+                               )
+                            )
+                        	));
+                          break; 
+    
                            case 4:                          
                             $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],

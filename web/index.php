@@ -192,6 +192,17 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                 	$m_message = $message['text'];
 
                     switch ($m_message) {
+                            case ($m_message=="Hi" || $m_message== "安安"|| $m_message== "你好"|| $m_message== "你好啊"):                          
+                            $client->replyMessage(array(
+                           'replyToken' => $event['replyToken'],
+                           'messages' => array(
+                             array(
+                                   'type' => 'text',
+                                   'text' => $m_message . $a    
+                               )
+                            )                    
+                     	));
+                             break; 
                             case ($m_message=="公會"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
@@ -359,7 +370,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                                    'text' => $Q     
                                )
                             )                    
-          	));
+                          	));
                              break; 
                             case ($m_message==A || $m_message== a): 
                             $client->replyMessage(array(

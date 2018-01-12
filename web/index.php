@@ -582,7 +582,7 @@ $B4="交易中途如網絡中斷 或 離開遊戲，有可能會影響魔法石�
                             )
                         	));
                           break; 
-                          case ($m_message==A19 || $m_message== a19|| $m_message=="為什麼無法安裝/下載《神魔之塔》APK 版本"   || $m_message=="無法安裝/下載" || $m_message=="APK 版本"  || $m_message=="無法安裝" || $m_message=="無法下載"):
+                          case ($m_message==A19 || $m_message== a19|| $m_message=="為什麼無法安裝/下載《神魔之塔》APK 版本"   || $m_message=="無法安裝/下載" || $m_message=="APK 版本"  || $m_message=="無法安裝" || $m_message=="無法下載"|| $m_message=="無法下載神魔之塔"|| $m_message=="無法下載神魔"|| $m_message=="無法安裝神魔之塔"|| $m_message=="無法安裝神魔"):
                                    $client->replyMessage(array(
                            'replyToken' => $event['replyToken'],
                             'messages' => array(

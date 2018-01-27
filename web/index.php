@@ -56,7 +56,7 @@ switch ($event['type']) {
                         ),
                         array(
                             'type' => 'text',
-                            'text' => '介紹你 ' . $store_text . ' 不錯喔x',
+                            'text' => '介紹你 ' . $store_text . ' 不錯喔',
                         )
 
                     ),

@@ -35,18 +35,14 @@ switch ($event['type']) {
             // 以關鍵字比對文字內容，符合的話將店名/地址寫入
             foreach ($keywords as $keyword) {
                 if (mb_strpos($message['text'], $keyword) !== false) {                      
-                    $store_text = $item['gsx$name']['$t']." 地址是:".$item['gsx$add']['$t'];    
-              } $client->replyMessage(array(
-                    'replyToken' => $event['replyToken'],
-                    'messages' => array(
-                        array(
-                            'type' => 'text',
-                            'text' => '你想要找'.$message['text'].' 讓我想想喔…',
-                        ),
+                    $store_text = $item['gsx$storename']['$t']." 地址是:".$item['gsx$storeaddress']['$t'];                 
+              }
             }
-        } 
-        
-            switch ($message['type']) {
+        }       
+
+
+
+        switch ($message['type']) {
             case 'text':
                 // 回覆訊息
                 // 第一段 你要想找_(原字串)_ 讓我想想喔…
@@ -60,14 +56,12 @@ switch ($event['type']) {
                         ),
                         array(
                             'type' => 'text',
-                            'text' => '介紹你 ' . $store_text . ' 不錯喔',
+                            'text' => '介紹你 '.$store_text.' 不錯喔',
                         )
 
                     ),
                 ));               
                 break;
-
-       
             default:
                 error_log("Unsupporeted message type: " . $message['type']);
                 break;

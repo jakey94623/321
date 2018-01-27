@@ -26,9 +26,9 @@ switch ($event['type']) {
         // 將Google表單轉成JSON資料
         $json = file_get_contents($googledataspi);
         $data = json_decode($json, true);           
-        $store_text; 
+        $store_text=''; 
         // 資料起始從feed.entry          
-          foreach ($data['feed']['entry'] as $item) {
+        foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
             $keywords = explode(',', $item['gsx$keywords']['$t']);
 

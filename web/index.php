@@ -43,17 +43,29 @@ switch ($event['type']) {
                             'type' => 'text',
                             'text' => '你想要找'.$message['text'].' 讓我想想喔…',
                         ),
+            }
+        } 
+        
+            switch ($message['type']) {
+            case 'text':
+                // 回覆訊息
+                // 第一段 你要想找_(原字串)_ 讓我想想喔…
+                // 第二段 介紹你_______不錯喔
+                $client->replyMessage(array(
+                    'replyToken' => $event['replyToken'],
+                    'messages' => array(
+                        array(
+                            'type' => 'text',
+                            'text' => '你想要找'.$message['text'].' 讓我想想喔…',
+                        ),
                         array(
                             'type' => 'text',
                             'text' => '介紹你 ' . $store_text . ' 不錯喔',
                         )
 
                     ),
-                ));        
-            }
-        } 
-        
-
+                ));               
+                break;
 
        
             default:

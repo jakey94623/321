@@ -11,7 +11,7 @@ require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 // Google表單資料
-$googledataspi = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwe_PXd61K4XdKxpPXvVRGbTsgA4Ka9IVZH0xLaSGX28hC4i6RmQ8UGdUfjZSHXU8ZLqctT8Ejjxit/pubhtml";
+$googledataspi = "https://docs.google.com/spreadsheets/d/1e8ZjCPlB-hgy3b3boR4gMYifmfQibnCkTDBk_zu0K54/edit#gid=0";
 
 // 建立Client from LINEBotTiny
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);

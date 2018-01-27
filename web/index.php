@@ -28,7 +28,7 @@ switch ($event['type']) {
         $data = json_decode($json, true);           
         $store_text; 
         // 資料起始從feed.entry          
-    /*    foreach ($data['feed']['entry'] as $item) {
+          foreach ($data['feed']['entry'] as $item) {
             // 將keywords欄位依,切成陣列
             $keywords = explode(',', $item['gsx$keywords']['$t']);
 
@@ -36,10 +36,23 @@ switch ($event['type']) {
             foreach ($keywords as $keyword) {
                 if (mb_strpos($message['text'], $keyword) !== false) {                      
                     $store_text = $item['gsx$name']['$t']." 地址是:".$item['gsx$add']['$t'];    
-              }
+              } $client->replyMessage(array(
+                    'replyToken' => $event['replyToken'],
+                    'messages' => array(
+                        array(
+                            'type' => 'text',
+                            'text' => '你想要找'.$message['text'].' 讓我想想喔…',
+                        ),
+                        array(
+                            'type' => 'text',
+                            'text' => '介紹你 ' . $store_text . ' 不錯喔',
+                        )
+
+                    ),
+                ));        
             }
         } 
-        */
+        
 
 
         switch ($message['type']) {

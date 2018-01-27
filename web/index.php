@@ -11,7 +11,7 @@ require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 // Google表單資料
-$googledataspi = "https://spreadsheets.google.com/feeds/list/1tQCaj3LUVwH0tBuPrfBY2dOJuF-qzpYEdOqGdNvJRLc/od6/public/values?alt=json";
+$googledataspi = "https://spreadsheets.google.com/feeds/list/1ggAB1JfVFne-E7VCWT3TG8KPFyEXxZHVjmei-F_bYv8/od6/public/values?alt=json";
 
 // 建立Client from LINEBotTiny
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
@@ -35,7 +35,7 @@ switch ($event['type']) {
             // 以關鍵字比對文字內容，符合的話將店名/地址寫入
             foreach ($keywords as $keyword) {
                 if (mb_strpos($message['text'], $keyword) !== false) {                      
-                    $store_text = $item['gsx$photourl']['$t']." 地址是:".$item['gsx$title']['$t'];                 
+                    $store_text = $item['gsx$storename']['$t']." 地址是:".$item['gsx$storeaddress']['$t'];                 
               }
             }
         }       

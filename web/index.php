@@ -1,74 +1,32 @@
-<?php
+var linebot = require('linebot');
+var express = require('express');
 
-/****************************************
- * LINE 機器人範例
- * 作者:林壽山
- * 聯絡資訊: superlevin@gmail.com
- ***************************************/
+var bot = linebot({
+  channelId: '1537195749',
+  channelSecret: 'f09490cd01d030f3bed923ab84c529cd',
+  channelAccessToken: 'd94WAvqAJBWRXZ3pmnlejuQ7S/Glp8CDK0FHSSLEWlypMdpiPerBs23gk/xsbQjT31RHVd1iq4YVMqqLbYiRRA0AnDPQohV2zFBBwMBK5JchWjB47muK5uiHL2l/JvkepuraSTviQNaPxMjKM7z/jwdB04t89/1O/w1cDnyilFU='
+});
 
-require_once('./LINEBotTiny.php');
+//這一段的程式是專門處理當有人傳送文字訊息給LineBot時，我們的處理回應
+bot.on('message', function(event) {
+  if (event.message.type = 'text') {
+    var msg = event.message.text;
+  //收到文字訊息時，直接把收到的訊息傳回去
+    event.reply(msg).then(function(data) {
+      // 傳送訊息成功時，可在此寫程式碼 
+      console.log(msg);
+    }).catch(function(error) {
+      // 傳送訊息失敗時，可在此寫程式碼 
+      console.log('錯誤產生，錯誤碼：'+error);
+    });
+  }
+});
 
-$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
-$channelSecret = getenv('LINE_CHANNEL_SECRET');
-// Google表單資料
-$googledataspi = "https://spreadsheets.google.com/feeds/list/2PACX-1vTwe_PXd61K4XdKxpPXvVRGbTsgA4Ka9IVZH0xLaSGX28hC4i6RmQ8UGdUfjZSHXU8ZLqctT8Ejjxit/od6/public/values?alt=json";
+const app = express();
+const linebotParser = bot.parser();
+app.post('/', linebotParser);
 
-// 建立Client from LINEBotTiny
-$client = new LINEBotTiny($channelAccessToken, $channelSecret);
-
-// 取得事件(只接受文字訊息)
-foreach ($client->parseEvents() as $event) {
-switch ($event['type']) {       
-    case 'message':
-        // 讀入訊息
-        $message = $event['message'];
-
-        // 將Google表單轉成JSON資料
-        $json = file_get_contents($googledataspi);
-        $data = json_decode($json, true);           
-        $store_text=''; 
-        // 資料起始從feed.entry          
-        foreach ($data['feed']['entry'] as $item) {
-            // 將keywords欄位依,切成陣列
-            $keywords = explode(',', $item['gsx$keywords']['$t']);
-
-            // 以關鍵字比對文字內容，符合的話將店名/地址寫入
-            foreach ($keywords as $keyword) {
-                if (mb_strpos($message['text'], $keyword) !== false) {                      
-                    $store_text = $item['gsx$storename']['$t']." 地址是:".$item['gsx$storeaddress']['$t'];                 
-              }
-            }
-        }       
-
-
-
-        switch ($message['type']) {
-            case 'text':
-                // 回覆訊息
-                // 第一段 你要想找_(原字串)_ 讓我想想喔…
-                // 第二段 介紹你_______不錯喔
-                $client->replyMessage(array(
-                    'replyToken' => $event['replyToken'],
-                    'messages' => array(
-                        array(
-                            'type' => 'text',
-                            'text' => '你想要找'.$message['text'].' 讓我想想喔…',
-                        ),
-                        array(
-                            'type' => 'text',
-                            'text' => '介紹你 '.$store_text.' 不錯喔',
-                        )
-
-                    ),
-                ));               
-                break;
-            default:
-                error_log("Unsupporeted message type: " . $message['type']);
-                break;
-        }
-        break;
-    default:
-        error_log("Unsupporeted event type: " . $event['type']);
-        break;
-}
-};
+var server = app.listen(process.env.PORT || 8080, function() {
+  var port = server.address().port;
+  console.log('目前的port是', port);
+});

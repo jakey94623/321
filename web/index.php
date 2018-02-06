@@ -40,7 +40,8 @@ foreach ($client->parseEvents() as $event) {
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => $m_message . $from
+                                'text' => $m_message . $from .$data
+                                $data = ["to" => $from, "messages" => array(["type" => "text", "text" => $message])];
                             )
                         )
                     	));

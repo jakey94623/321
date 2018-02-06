@@ -23,6 +23,8 @@ require_once('./LINEBotTiny.php');
 $channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
 $channelSecret = getenv('LINE_CHANNEL_SECRET');
 
+$from = $receive->events[0]->source->userId;
+
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
@@ -38,7 +40,7 @@ foreach ($client->parseEvents() as $event) {
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => $m_message
+                                'text' => $m_message . $from
                             )
                         )
                     	));

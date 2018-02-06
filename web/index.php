@@ -38,7 +38,7 @@ foreach ($client->parseEvents() as $event) {
                            'messages' => array(
                              array(
                                    'type' => 'text',
-                                   'text' => $m_message . "（～￣▽￣～）（～￣▽￣～）\n" . $a    
+                                   'text' => $m_message . "（～￣▽￣～）（～￣▽￣～）\n"   
                                )
                             )                    
                      	));

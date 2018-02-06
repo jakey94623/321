@@ -28,7 +28,7 @@ $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
-            $b=$event['Id'];
+            $b=$event['groupId'];
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':

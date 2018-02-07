@@ -1,3 +1,4 @@
+<?php
 /* 輸入申請的Line Developers 資料  */
 	$channel_id = "{1537195749}";
 	$channel_secret = "{f09490cd01d030f3bed923ab84c529cd}";
@@ -162,3 +163,4 @@ function getObjContent($filenameExtension){
 	}
 	return $myURL.$objID.'.'.$filenameExtension;
 }
+?>

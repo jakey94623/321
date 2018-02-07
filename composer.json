@@ -1,20 +1,10 @@
-//  當有人發送訊息給bot時 我們會收到的json
- 	{
- 	  "events": 
- 	  [
- 		  {
- 			"replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
- 			"type": "message",
- 			"timestamp": 1462629479859,
- 			"source": {
- 				 "type": "user",
- 				 "userId": "U206d25c2ea6bd87c17655609a1c37cb8"
- 			 },
-			 "message": {
- 				 "id": "325708",
- 				 "type": "text",
- 				 "text": "Hello, world"
- 			  }
- 		  }
- 	  ]
- 	}
+  "require" : {
+    "silex/silex": "^2.0.4",
+    "monolog/monolog": "^1.22",
+    "twig/twig": "^2.0",
+    "symfony/twig-bridge": "^3"
+  },
+  "require-dev": {
+    "heroku/heroku-buildpack-php": "*"
+  }
+}

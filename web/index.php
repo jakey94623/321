@@ -33,6 +33,12 @@ foreach ($client->parseEvents() as $event) {
                 case 'text':
                 	$m_message = $message['text'];
                     $a=$message['id'];
+                    $response = $bot->getProfile($event->getUserId());
+if ($response->isSucceeded()) 
+{
+  $profile = $response->getJSONDecodedBody();
+  //$profile 為陣列，內容裡會有對方的姓名、userId(這不確定是不是會變動)、圖像網址、狀態訊息
+}
                 	if($m_message!="")
                 	{
                 		$client->replyMessage(array(
@@ -40,7 +46,7 @@ foreach ($client->parseEvents() as $event) {
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' =>$a . $m_message
+                                'text' =>$a . $m_message . $response
                             )
                         )
                     	));

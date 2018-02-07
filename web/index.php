@@ -31,22 +31,6 @@ foreach ($client->parseEvents() as $event) {
                 case 'text':
                 	$m_message = $message['text'];
                     $a=$message['id'];
-                $profile=$event['User'];
-                $c=$message['User'];
-                    $b=$profile['USERID'];
-                $e=$message['USERID'];
-                    $f=$event['userId'];
-                $g=$message['userId'];
-                    $h=$event['GETUSERID'];
-                $i=$message['GETUSERID'];
-                    $j=$event['getuserid'];
-                $k=$message['getuserid'];
-/*$response = $bot->getProfile($event->getUserId());
-if ($response->isSucceeded()) 
-{
-  $profile = $response->getJSONDecodedBody();
-  //$profile 為陣列，內容裡會有對方的姓名、userId(這不確定是不是會變動)、圖像網址、狀態訊息
-}*/
                 	if($m_message!="")
                 	{
                 		$client->replyMessage(array(
@@ -54,7 +38,7 @@ if ($response->isSucceeded())
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' =>$a . $m_message . $profile . $c . $b . $d . $e . $f . $g . $h . $i . $j . $k
+                                'text' =>$a . $m_message 
                             )
                         )
                     	));

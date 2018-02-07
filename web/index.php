@@ -33,7 +33,7 @@ foreach ($client->parseEvents() as $event) {
                 case 'text':
                 	$m_message = $message['text'];
                     $a=$message['id'];
-                    $b=$message['location'];
+                    $b=$event['id'];
                 	if($m_message!="")
                 	{
                 		$client->replyMessage(array(

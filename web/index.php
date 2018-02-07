@@ -18,13 +18,8 @@
 
 require_once('./LINEBotTiny.php');
 
-$bot = new \LINE\LINEBot(
-  new \LINE\LINEBot\HTTPClient\CurlHTTPClient('d94WAvqAJBWRXZ3pmnlejuQ7S/Glp8CDK0FHSSLEWlypMdpiPerBs23gk/xsbQjT31RHVd1iq4YVMqqLbYiRRA0AnDPQohV2zFBBwMBK5JchWjB47muK5uiHL2l/JvkepuraSTviQNaPxMjKM7z/jwdB04t89/1O/w1cDnyilFU='),
-  ['channelSecret' => 'f09490cd01d030f3bed923ab84c529cd']
-);
-
-/*$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
-$channelSecret = getenv('LINE_CHANNEL_SECRET');*/
+$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
+$channelSecret = getenv('LINE_CHANNEL_SECRET');
 
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
@@ -36,12 +31,14 @@ foreach ($client->parseEvents() as $event) {
                 case 'text':
                 	$m_message = $message['text'];
                     $a=$message['id'];
-                    $response = $bot->getProfile($event->getUserId());
+                $profile=$event['getUserId'];
+                $c=$message['getUserId'];
+/*$response = $bot->getProfile($event->getUserId());
 if ($response->isSucceeded()) 
 {
   $profile = $response->getJSONDecodedBody();
   //$profile 為陣列，內容裡會有對方的姓名、userId(這不確定是不是會變動)、圖像網址、狀態訊息
-}
+}*/
                 	if($m_message!="")
                 	{
                 		$client->replyMessage(array(
@@ -49,7 +46,7 @@ if ($response->isSucceeded())
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' =>$a . $m_message . $profile
+                                'text' =>$a . $m_message . $profile . $c
                             )
                         )
                     	));

@@ -49,7 +49,7 @@ if ($response->isSucceeded())
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' =>$a . $m_message . $response
+                                'text' =>$a . $m_message . $profile
                             )
                         )
                     	));

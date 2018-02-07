@@ -31,9 +31,9 @@ foreach ($client->parseEvents() as $event) {
                 case 'text':
                 	$m_message = $message['text'];
                     $a=$message['id'];
-                $profile=$event['GetUserid'];
-                $c=$message['GetUserid'];
-                    $b=$event['USERID'];
+                $profile=$event['User'];
+                $c=$message['User'];
+                    $b=$profile['USERID'];
                 $e=$message['USERID'];
                     $f=$event['userId'];
                 $g=$message['userId'];

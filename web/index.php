@@ -1,54 +1,65 @@
-<?php
+/* 輸入申請的Line Developers 資料  */
+	$channel_id = "{1537195749}";
+	$channel_secret = "{f09490cd01d030f3bed923ab84c529cd}";
+	$channel_access_token = "{d94WAvqAJBWRXZ3pmnlejuQ7S/Glp8CDK0FHSSLEWlypMdpiPerBs23gk/xsbQjT31RHVd1iq4YVMqqLbYiRRA0AnDPQohV2zFBBwMBK5JchWjB47muK5uiHL2l/JvkepuraSTviQNaPxMjKM7z/jwdB04t89/1O/w1cDnyilFU=}";
 
-/**
- * Copyright 2016 LINE Corporation
- *
- * LINE Corporation licenses this file to you under the Apache License,
- * version 2.0 (the "License"); you may not use this file except in compliance
- * with the License. You may obtain a copy of the License at:
- *
- *   https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations
- * under the License.
- */
-
-require_once('./LINEBotTiny.php');
-
-$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
-$channelSecret = getenv('LINE_CHANNEL_SECRET');
+	$myURL = "https://Your Domain/update/"
 
 
-$client = new LINEBotTiny($channelAccessToken, $channelSecret);
-foreach ($client->parseEvents() as $event) {
-    switch ($event['type']) {
-        case 'message':
-            $message = $event['message'];
-            switch ($message['type']) {
-                case 'text':
-                	$m_message = $message['text'];
-                    $a=$message['id'];
-                	if($m_message!="")
-                	{
-                		$client->replyMessage(array(
-                        'replyToken' => $event['replyToken'],
-                        'messages' => array(
-                            array(
-                                'type' => 'text',
-                                'text' =>$a . $m_message 
-                            )
-                        )
-                    	));
-                	}
-                    break;
-                
-            }
-            break;
-        default:
-            error_log("Unsupporeted event type: " . $event['type']);
-            break;
-    }
-};
+//  當有人發送訊息給bot時 我們會收到的json
+// 	{
+// 	  "events": 
+// 	  [
+// 		  {
+// 			"replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
+// 			"type": "message",
+// 			"timestamp": 1462629479859,
+// 			"source": {
+// 				 "type": "user",
+// 				 "userId": "U206d25c2ea6bd87c17655609a1c37cb8"
+// 			 },
+// 			 "message": {
+// 				 "id": "325708",
+// 				 "type": "text",
+// 				 "text": "Hello, world"
+// 			  }
+// 		  }
+// 	  ]
+// 	}
+	 
+	 
+	// 將收到的資料整理至變數
+	$receive = json_decode(file_get_contents("php://input"));
+	
+	// 讀取收到的訊息內容
+	$text = $receive->events[0]->message->text;
+	
+	// 讀取訊息來源的類型 	[user, group, room]
+	$type = $receive->events[0]->source->type;
+	
+	// 由於新版的Messaging Api可以讓Bot帳號加入多人聊天和群組當中
+	// 所以在這裡先判斷訊息的來源
+	if ($type == "room")
+	{
+		// 多人聊天 讀取房間id
+		$from = $receive->events[0]->source->roomId;
+	} 
+	else if ($type == "group")
+	{
+		// 群組 讀取群組id
+		$from = $receive->events[0]->source->groupId;
+	}
+	else
+	{
+		// 一對一聊天 讀取使用者id
+		$from = $receive->events[0]->source->userId;
+	}
+	
+	// 讀取訊息的型態 [Text, Image, Video, Audio, Location, Sticker]
+	$content_type = $receive->events[0]->message->type;
+	
+	// 準備Post回Line伺服器的資料 
+	$header = ["Content-Type: application/json", "Authorization: Bearer {" . $channel_access_token . "}"];
+	
+	// 回覆訊息
+	reply($content_type, $text);

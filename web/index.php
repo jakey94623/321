@@ -31,16 +31,16 @@ foreach ($client->parseEvents() as $event) {
                 case 'text':
                 	$m_message = $message['text'];
                     $a=$message['id'];
-                $profile=$event['getUserid'];
-                $c=$message['getUserid'];
-                    $b=$event['Userid'];
-                $e=$message['Userid'];
-                    $f=$event['userid'];
-                $g=$message['userid'];
-                    $h=$event['getuserid'];
-                $i=$message['getuserid'];
-                    $j=$event['UserId'];
-                $k=$message['UserId'];
+                $profile=$event['GetUserid'];
+                $c=$message['GetUserid'];
+                    $b=$event['USERID'];
+                $e=$message['USERID'];
+                    $f=$event['userId'];
+                $g=$message['userId'];
+                    $h=$event['GETUSERID'];
+                $i=$message['GETUSERID'];
+                    $j=$event['getuserid'];
+                $k=$message['getuserid'];
 /*$response = $bot->getProfile($event->getUserId());
 if ($response->isSucceeded()) 
 {

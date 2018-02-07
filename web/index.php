@@ -1,35 +1,14 @@
 <?php
-/* 輸入申請的Line Developers 資料  */
-	$channelAccessToken = getenv('LINE_CHANNEL_ACCESSTOKEN');
-	$channelSecret = getenv('LINE_CHANNEL_SECRET');
+//$channel_id = "{1537841353}";
+//$channel_secret = "{a7e8c58d4744adbc363c42bc558db89e}";
+//$channel_access_token = "{WI8f+ot/+7IJffBJATgfi1+rnNYCW+RGm1u2SRg2sdOLw2Y0+4gbdJsmh0zmUdtZNvx595o+hvI3XYeFQk66EVpl1mWwDDJOlKRecD6mc8gES9hnbAH+SOcrxw3QWmrmvQPI0WxrXMwB8EVOXPx4FwdB04t89/1O/w1cDnyilFU=}";
 
+	$channel_id = "{1537195749}";
+	$channel_secret = "{f09490cd01d030f3bed923ab84c529cd}";
+	$channel_access_token = "{d94WAvqAJBWRXZ3pmnlejuQ7S/Glp8CDK0FHSSLEWlypMdpiPerBs23gk/xsbQjT31RHVd1iq4YVMqqLbYiRRA0AnDPQohV2zFBBwMBK5JchWjB47muK5uiHL2l/JvkepuraSTviQNaPxMjKM7z/jwdB04t89/1O/w1cDnyilFU=}";
 
-
-//  當有人發送訊息給bot時 我們會收到的json
-// 	{
-// 	  "events": 
-// 	  [
-// 		  {
-// 			"replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
-// 			"type": "message",
-// 			"timestamp": 1462629479859,
-// 			"source": {
-// 				 "type": "user",
-// 				 "userId": "U206d25c2ea6bd87c17655609a1c37cb8"
-// 			 },
-// 			 "message": {
-// 				 "id": "325708",
-// 				 "type": "text",
-// 				 "text": "Hello, world"
-// 			  }
-// 		  }
-// 	  ]
-// 	}
-	 
-	 
-	// 將收到的資料整理至變數
-	$receive = json_decode(file_get_contents("php://input"));
 	
+	$receive = json_decode(file_get_contents("php://input"));		
 	// 讀取收到的訊息內容
 	$text = $receive->events[0]->message->text;
 	
@@ -62,8 +41,7 @@
 	
 	// 回覆訊息
 	reply($content_type, $text);
-	
-	function reply($content_type, $message) {
+function reply($content_type, $message) {
 	 
 	 	global $header, $from, $receive;
 	 	
@@ -122,38 +100,41 @@
 		));
 		file_get_contents($url, false, $context);
 	}
-	function getObjContent($filenameExtension){
+function getObjContent($filenameExtension){
 		
-		global $channel_access_token, $receive;
+	global $channel_access_token, $receive;
 	
-		$objID = $receive->events[0]->message->id;
-		$url = 'https://api.line.me/v2/bot/message/'.$objID.'/content';
-		$ch = curl_init($url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Authorization: Bearer {' . $channel_access_token . '}',
-		));
-		
-		$json_content = curl_exec($ch);
-		curl_close($ch);
-		if (!$json_content) {
-			return false;
-		}
-		
-		$fileURL = './update/'.$objID.'.'.$filenameExtension;
-		$fp = fopen($fileURL, 'w');
-		fwrite($fp, $json_content);
-		fclose($fp);
-		
-		if ($filenameExtension=="mp3"){
-			require_once("../getID3/getid3/getid3.php");
-			$getID3 = new getID3;
-			$fileData = $getID3->analyze($fileURL);
-			//$audioInfo = var_dump($fileData);
-			$playSec = floor($fileData["playtime_seconds"]);
-			$re = array($myURL.$objID.'.'.$filenameExtension, $playSec*1000);
-			return $re;
-		}
-		return $myURL.$objID.'.'.$filenameExtension;
+	$objID = $receive->events[0]->message->id;
+	$url = 'https://api.line.me/v2/bot/message/'.$objID.'/content';
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		'Authorization: Bearer {' . $channel_access_token . '}',
+	));
+	
+	$json_content = curl_exec($ch);
+	curl_close($ch);
+
+	if (!$json_content) {
+		return false;
 	}
+	
+	$fileURL = './update/'.$objID.'.'.$filenameExtension;
+	$fp = fopen($fileURL, 'w');
+	fwrite($fp, $json_content);
+	fclose($fp);
+		
+	if ($filenameExtension=="mp3"){
+	    //使用getID3套件分析mp3資訊
+		require_once("getID3/getid3/getid3.php");
+		$getID3 = new getID3;
+		$fileData = $getID3->analyze($fileURL);
+		//$audioInfo = var_dump($fileData);
+		$playSec = floor($fileData["playtime_seconds"]);
+		$re = array($myURL.$objID.'.'.$filenameExtension, $playSec*1000);
+		return $re;
+	}
+	return $myURL.$objID.'.'.$filenameExtension;
+}
 ?>
+

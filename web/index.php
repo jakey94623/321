@@ -33,7 +33,7 @@ foreach ($client->parseEvents() as $event) {
                 case 'text':
                 	$m_message = $message['text'];
                     $a=$message['id'];
-                    $b=$event['roomId'];
+                    $b=$event['user'];
                     $c=$b['id']
                 	if($m_message!="")
                 	{

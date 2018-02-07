@@ -64,9 +64,8 @@
 	
 	// 回覆訊息
 	reply($content_type, $text);
-
-
-function reply($content_type, $message) {
+	
+	function reply($content_type, $message) {
 	 
 	 	global $header, $from, $receive;
 	 	
@@ -125,42 +124,38 @@ function reply($content_type, $message) {
 		));
 		file_get_contents($url, false, $context);
 	}
-
-
-function getObjContent($filenameExtension){
+	function getObjContent($filenameExtension){
 		
-	global $channel_access_token, $receive;
+		global $channel_access_token, $receive;
 	
-	$objID = $receive->events[0]->message->id;
-	$url = 'https://api.line.me/v2/bot/message/'.$objID.'/content';
-	$ch = curl_init($url);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-		'Authorization: Bearer {' . $channel_access_token . '}',
-	));
-	
-	$json_content = curl_exec($ch);
-	curl_close($ch);
-
-	if (!$json_content) {
-		return false;
-	}
-	
-	$fileURL = './update/'.$objID.'.'.$filenameExtension;
-	$fp = fopen($fileURL, 'w');
-	fwrite($fp, $json_content);
-	fclose($fp);
+		$objID = $receive->events[0]->message->id;
+		$url = 'https://api.line.me/v2/bot/message/'.$objID.'/content';
+		$ch = curl_init($url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			'Authorization: Bearer {' . $channel_access_token . '}',
+		));
 		
-	if ($filenameExtension=="mp3"){
-	    //使用getID3套件分析mp3資訊
-		require_once("getID3/getid3/getid3.php");
-		$getID3 = new getID3;
-		$fileData = $getID3->analyze($fileURL);
-		//$audioInfo = var_dump($fileData);
-		$playSec = floor($fileData["playtime_seconds"]);
-		$re = array($myURL.$objID.'.'.$filenameExtension, $playSec*1000);
-		return $re;
+		$json_content = curl_exec($ch);
+		curl_close($ch);
+		if (!$json_content) {
+			return false;
+		}
+		
+		$fileURL = './update/'.$objID.'.'.$filenameExtension;
+		$fp = fopen($fileURL, 'w');
+		fwrite($fp, $json_content);
+		fclose($fp);
+		
+		if ($filenameExtension=="mp3"){
+			require_once("../getID3/getid3/getid3.php");
+			$getID3 = new getID3;
+			$fileData = $getID3->analyze($fileURL);
+			//$audioInfo = var_dump($fileData);
+			$playSec = floor($fileData["playtime_seconds"]);
+			$re = array($myURL.$objID.'.'.$filenameExtension, $playSec*1000);
+			return $re;
+		}
+		return $myURL.$objID.'.'.$filenameExtension;
 	}
-	return $myURL.$objID.'.'.$filenameExtension;
-}
 ?>

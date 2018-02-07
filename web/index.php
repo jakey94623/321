@@ -31,8 +31,16 @@ foreach ($client->parseEvents() as $event) {
                 case 'text':
                 	$m_message = $message['text'];
                     $a=$message['id'];
-                $profile=$event['getUserId'];
-                $c=$message['getUserId'];
+                $profile=$event['getUserid'];
+                $c=$message['getUserid'];
+                    $b=$event['Userid'];
+                $e=$message['Userid'];
+                    $f=$event['userid'];
+                $g=$message['userid'];
+                    $h=$event['getuserid'];
+                $i=$message['getuserid'];
+                    $j=$event['UserId'];
+                $k=$message['UserId'];
 /*$response = $bot->getProfile($event->getUserId());
 if ($response->isSucceeded()) 
 {
@@ -46,7 +54,7 @@ if ($response->isSucceeded())
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' =>$a . $m_message . $profile . $c
+                                'text' =>$a . $m_message . $profile . $c . $b . $d . $e . $f . $g . $h . $i . $j . $k
                             )
                         )
                     	));

@@ -28,6 +28,8 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
+            $b = $event['!id'];
+            $a='!id';
             switch ($message['type']) {
                 case 'text':
                 	$m_message = $message['text'];
@@ -38,7 +40,7 @@ foreach ($client->parseEvents() as $event) {
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => $m_message
+                                'text' => $m_message . !id . $a . $b . '!id'
                             )
                         )
                     	));

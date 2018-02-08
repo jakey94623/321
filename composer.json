@@ -12,7 +12,7 @@
 				 "type": "text",
 				 "text": "Hello, world"
 			  }
-		  }
+		  },
 {
   "require" : {
     "silex/silex": "^2.0.4",

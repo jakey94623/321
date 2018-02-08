@@ -1,34 +1,32 @@
 <?php
 
-	ini_set("display_errors", "On"); // 顯示錯誤是否打開( On=開, Off=關 )
-	error_reporting(E_ALL & ~E_NOTICE);
-
 	/* 輸入申請的Line Developers 資料  */
-	$channel_id = "1537195749";
-	$channel_secret = "f09490cd01d030f3bed923ab84c529cd";
-	$channel_access_token = "d94WAvqAJBWRXZ3pmnlejuQ7S/Glp8CDK0FHSSLEWlypMdpiPerBs23gk/xsbQjT31RHVd1iq4YVMqqLbYiRRA0AnDPQohV2zFBBwMBK5JchWjB47muK5uiHL2l/JvkepuraSTviQNaPxMjKM7z/jwdB04t89/1O/w1cDnyilFU=";
+	$channel_id = "{1537195749}";
+	$channel_secret = "{f09490cd01d030f3bed923ab84c529cd}";
+	$channel_access_token = "{d94WAvqAJBWRXZ3pmnlejuQ7S/Glp8CDK0FHSSLEWlypMdpiPerBs23gk/xsbQjT31RHVd1iq4YVMqqLbYiRRA0AnDPQohV2zFBBwMBK5JchWjB47muK5uiHL2l/JvkepuraSTviQNaPxMjKM7z/jwdB04t89/1O/w1cDnyilFU=}";
 
 
-//  當有人發送訊息 bot收到的json
-// 	{
-// 	  "events": 
-// 	  [
-// 		  {
-// 			"replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
-// 			"type": "message",
-// 			"timestamp": 1462629479859,
-// 			"source": {
-// 				 "type": "user",
-// 				 "userId": "U206d25c2ea6bd87c17655609a1c37cb8"
-// 			 },
-// 			 "message": {
-// 				 "id": "325708",
-// 				 "type": "text",
-// 				 "text": "Hello, world"
-// 			  }
-// 		  }
-// 	  ]
-// 	}
+
+	//  當有人發送訊息給bot時 我們會收到的json
+	// 	{
+	// 	  "events": 
+	// 	  [
+	// 		  {
+	// 			"replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
+	// 			"type": "message",
+	// 			"timestamp": 1462629479859,
+	// 			"source": {
+	// 				 "type": "user",
+	// 				 "userId": "U206d25c2ea6bd87c17655609a1c37cb8"
+	// 			 },
+	// 			 "message": {
+	// 				 "id": "325708",
+	// 				 "type": "text",
+	// 				 "text": "Hello, world"
+	// 			  }
+	// 		  }
+	// 	  ]
+	// 	}
 	 
 	 
 	// 將收到的資料整理至變數
@@ -61,20 +59,19 @@
 	// 讀取訊息的型態 [Text, Image, Video, Audio, Location, Sticker]
 	$content_type = $receive->events[0]->message->type;
 	
-	/* 準備Post回Line伺服器的資料 */
+	// 準備Post回Line伺服器的資料 
 	$header = ["Content-Type: application/json", "Authorization: Bearer {" . $channel_access_token . "}"];
-	reply($content_type, $text);
 	
-	/* 發送訊息 */	
+	// 回覆訊息
+	reply($content_type, $text);
+
+	
+
 	function reply($content_type, $message) {
 	 
 	 	global $header, $from, $receive;
 	 	
 		$url = "https://api.line.me/v2/bot/message/push";
-				
-// 		$profile = curlUserProfileFromLine($from);
-// 		$userName = $profile['displayName'];
-		
 		
 		$data = ["to" => $from, "messages" => array(["type" => "text", "text" => $message])];
 		
@@ -84,21 +81,25 @@
 				$content_type = "文字訊息";
 				$data = ["to" => $from, "messages" => array(["type" => "text", "text" => $message])];
 				break;
+				
 			case "image" :
 				$content_type = "圖片訊息";
-				$message = getObjContent("jpeg");
+				$message = getObjContent("jpeg");   // 讀取圖片內容
 				$data = ["to" => $from, "messages" => array(["type" => "image", "originalContentUrl" => $message, "previewImageUrl" => $message])];
 				break;
+				
 			case "video" :
 				$content_type = "影片訊息";
-				$message = getObjContent("mp4");
+				$message = getObjContent("mp4");   // 讀取影片內容
 				$data = ["to" => $from, "messages" => array(["type" => "video", "originalContentUrl" => $message, "previewImageUrl" => $message])];
 				break;
+				
 			case "audio" :
 				$content_type = "語音訊息";
-				$message = getObjContent("mp3");
+				$message = getObjContent("mp3");   // 讀取聲音內容
 				$data = ["to" => $from, "messages" => array(["type" => "audio", "originalContentUrl" => $message[0], "duration" => $message[1]])];
 				break;
+				
 			case "location" :
 				$content_type = "位置訊息";
 				$title = $receive->events[0]->message->title;
@@ -107,12 +108,14 @@
 				$longitude = $receive->events[0]->message->longitude;
 				$data = ["to" => $from, "messages" => array(["type" => "location", "title" => $title, "address" => $address, "latitude" => $latitude, "longitude" => $longitude])];
 				break;
+				
 			case "sticker" :
 				$content_type = "貼圖訊息";
 				$packageId = $receive->events[0]->message->packageId;
 				$stickerId = $receive->events[0]->message->stickerId;
 				$data = ["to" => $from, "messages" => array(["type" => "sticker", "packageId" => $packageId, "stickerId" => $stickerId])];
 				break;
+				
 			default:
 				$content_type = "未知訊息";
 				break;
@@ -123,7 +126,7 @@
 		));
 		file_get_contents($url, false, $context);
 	}
-	
+
 	function getObjContent($filenameExtension){
 		
 		global $channel_access_token, $receive;
@@ -143,59 +146,21 @@
 			return false;
 		}
 		
-		$fileURL = '/var/www/linebot/update/'.$objID.'.'.$filenameExtension;
+		$fileURL = './update/'.$objID.'.'.$filenameExtension;
 		$fp = fopen($fileURL, 'w');
 		fwrite($fp, $json_content);
 		fclose($fp);
 		
-		if ($filenameExtension==".mp3"){
-			require_once("getID3/getid3/getid3.php");
+		if ($filenameExtension=="mp3"){
+			require_once("../getID3/getid3/getid3.php");
 			$getID3 = new getID3;
 			$fileData = $getID3->analyze($fileURL);
-			$audioInfo = var_dump($fileData);
-			$playSec = $audioInfo["playtime_seconds"];
-			$re = array("https://linebot.andynote.com/update/".$objID.'.'.$filenameExtension, $playSec);
+			//$audioInfo = var_dump($fileData);
+			$playSec = floor($fileData["playtime_seconds"]);
+			$re = array($myURL.$objID.'.'.$filenameExtension, $playSec*1000);
+			return $re;
 		}
 
-		return "https://linebot.andynote.com/update/".$objID.'.'.$filenameExtension;
-	}
-	
-	function curlUserProfileFromLine($mid) {
-		
-		global $channel_access_token;
-	
-		$url = 'https://api.line.me/v2/bot/profile/' . $mid;
-		$ch = curl_init($url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			'Authorization: Bearer {' . $channel_access_token . '}',
-		));
-		
-		$json_content = curl_exec($ch);
-		curl_close($ch);
-
-		if (!$json_content) {
-			return false;
-		}
-
-// 		{
-// 			"displayName":"LINE taro",
-// 			"userId":"Uxxxxxxxxxxxxxx...",
-// 			"pictureUrl":"http://obs.line-apps.com/...",
-// 			"statusMessage":"Hello, LINE!"
-// 		}
-		$json = json_decode($json_content, true);
-
-		$url = $json['pictureUrl'];
-		$image_data = file_get_contents($url);
-		$image = imagecreatefromstring($image_data);
-		imagejpeg($image, '/var/www/linebot/update/profile/'.$json['userId'].'jpeg'); // 於此目錄下, 產生實體圖片
-		$json['pictureUrl'] = "https://linebot.andynote.com/update/profile/".$json['userId'].'jpeg';
-		
-		if ($mid == $json['userId']) {
-				return $json;
-		}
-		
-		return false;
+		return $myURL.$objID.'.'.$filenameExtension;
 	}
 ?>

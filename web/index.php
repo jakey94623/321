@@ -4,9 +4,9 @@
 	error_reporting(E_ALL & ~E_NOTICE);
 
 	/* 輸入申請的Line Developers 資料  */
-	$channel_id = "1484908685";
-	$channel_secret = "40e95ecc437324841736d4f0a97bd876";
-	$channel_access_token = "AiF44GlVI7NxUxp5mNXTG9fnu/3Q8IRxiSxgWVzrkZINjZdnNPKGi0cbIEIPOaXbVcqqloSI+GzMKtaBKiDd/Cfa/w0eKzneP3yvacJN2r2d6EtzOpk/qEfSJdkeD/yRa2I9jNEGeswrmozu8WbSaQdB04t89/1O/w1cDnyilFU=";
+	$channel_id = "1537195749";
+	$channel_secret = "f09490cd01d030f3bed923ab84c529cd";
+	$channel_access_token = "d94WAvqAJBWRXZ3pmnlejuQ7S/Glp8CDK0FHSSLEWlypMdpiPerBs23gk/xsbQjT31RHVd1iq4YVMqqLbYiRRA0AnDPQohV2zFBBwMBK5JchWjB47muK5uiHL2l/JvkepuraSTviQNaPxMjKM7z/jwdB04t89/1O/w1cDnyilFU=";
 
 
 //  當有人發送訊息 bot收到的json

@@ -28,28 +28,7 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            
-            
-            
-            
-            
-            $mySheetId='18F-3yVbPZzYCcAH5-hSxNMwDjKRcyAjoKJEoVaGzU2A';
-
-
-//程式啟動後會去讀取試算表內的問題
-getQuestions();
-
-
-//這是讀取問題的函式
-function getQuestions() {
-  $sheets = google.sheets('v4');
-  $sheets['spreadsheets']['values']['get']({
-     auth: oauth2Client,
-     spreadsheetId: $mySheetId,
-     range:encodeURI('問題'),
-  }
-            
-           /* switch ($message['type']) {
+            switch ($message['type']) {
                 case 'text':
                 	$m_message = $message['text'];
                     $source=$event['source'];
@@ -70,7 +49,6 @@ function getQuestions() {
                     	));
                 	}
                     break;
-                */
             }
             break;
         default:

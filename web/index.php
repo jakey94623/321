@@ -58,11 +58,22 @@ foreach ($client->parseEvents() as $event) {
 				$latitude = $receive->events[0]->message->latitude;
 				$longitude = $receive->events[0]->message->longitude;
 				$data = ["to" => $from, "messages" => array(["type" => "location", "title" => $title, "address" => $address, "latitude" => $latitude, "longitude" => $longitude])];
-				break;
                     
+                    if($m_message!="")
+                	{
+                		$client->replyMessage(array(
+                        'replyToken' => $event['replyToken'],
+                        'messages' => array(
+                            array(
+                                'type' => 'location',
+                                'location' => $content_type . $title . $address . $latitude . $longitude . $data
+                            )
+                        )
+                    	));
+                	}
                     
-                    
-                    
+                    				break;
+
             }
             break;
         default:

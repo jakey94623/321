@@ -28,7 +28,46 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            switch ($message['type']) {
+            
+            
+            
+            
+            
+            var mySheetId='18F-3yVbPZzYCcAH5-hSxNMwDjKRcyAjoKJEoVaGzU2A';
+
+$myQuestions=[];
+$users=[];
+$totalSteps=0;
+$myReplies=[];
+
+//程式啟動後會去讀取試算表內的問題
+getQuestions();
+
+
+//這是讀取問題的函式
+function getQuestions() {
+  $sheets = google.sheets('v4');
+  $sheets['spreadsheets']['values']['get']({
+     auth: oauth2Client,
+     spreadsheetId: mySheetId,
+     range:encodeURI('問題'),
+  }, function(err, response) {
+     if (err) {
+        console.log('讀取問題檔的API產生問題：' + err);
+        return;
+     }
+     $rows = $response['values'];
+     if ($rows.length == 0) {
+        console.log('No data found.');
+     } else {
+       $myQuestions=$rows;
+       totalSteps=$myQuestions[0].length;
+       console.log('要問的問題已下載完畢！');
+     }
+  });
+}
+            
+           /* switch ($message['type']) {
                 case 'text':
                 	$m_message = $message['text'];
                     $source=$event['source'];
@@ -49,7 +88,7 @@ foreach ($client->parseEvents() as $event) {
                     	));
                 	}
                     break;
-                
+                */
             }
             break;
         default:

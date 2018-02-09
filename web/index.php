@@ -49,6 +49,20 @@ foreach ($client->parseEvents() as $event) {
                     	));
                 	}
                     break;
+                    
+                    
+                    case "location" :
+				$content_type = "位置訊息";
+				$title = $receive->events[0]->message->title;
+				$address = $receive->events[0]->message->address;
+				$latitude = $receive->events[0]->message->latitude;
+				$longitude = $receive->events[0]->message->longitude;
+				$data = ["to" => $from, "messages" => array(["type" => "location", "title" => $title, "address" => $address, "latitude" => $latitude, "longitude" => $longitude])];
+				break;
+                    
+                    
+                    
+                    
             }
             break;
         default:

@@ -51,21 +51,7 @@ function getQuestions() {
      auth: oauth2Client,
      spreadsheetId: mySheetId,
      range:encodeURI('問題'),
-  }, function(err, response) {
-     if (err) {
-        console.log('讀取問題檔的API產生問題：' + err);
-        return;
-     }
-     $rows = $response['values'];
-     if ($rows.length == 0) {
-        console.log('No data found.');
-     } else {
-       $myQuestions=$rows;
-       totalSteps=$myQuestions[0].length;
-       console.log('要問的問題已下載完畢！');
-     }
-  });
-}
+  }
             
            /* switch ($message['type']) {
                 case 'text':

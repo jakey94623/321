@@ -33,12 +33,8 @@ foreach ($client->parseEvents() as $event) {
             
             
             
-            var mySheetId='18F-3yVbPZzYCcAH5-hSxNMwDjKRcyAjoKJEoVaGzU2A';
+            $mySheetId='18F-3yVbPZzYCcAH5-hSxNMwDjKRcyAjoKJEoVaGzU2A';
 
-$myQuestions=[];
-$users=[];
-$totalSteps=0;
-$myReplies=[];
 
 //程式啟動後會去讀取試算表內的問題
 getQuestions();
@@ -49,7 +45,7 @@ function getQuestions() {
   $sheets = google.sheets('v4');
   $sheets['spreadsheets']['values']['get']({
      auth: oauth2Client,
-     spreadsheetId: mySheetId,
+     spreadsheetId: $mySheetId,
      range:encodeURI('問題'),
   }
             

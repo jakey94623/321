@@ -34,6 +34,7 @@ foreach ($client->parseEvents() as $event) {
                     $a = $message['id'];
                     $b=$event['source'];
                     $c=$b['userId'];
+                    $d=$event['timestamp'];
                 	if($m_message!="")
                 	{
                 		$client->replyMessage(array(
@@ -41,7 +42,7 @@ foreach ($client->parseEvents() as $event) {
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => $a . $m_message . $c
+                                'text' => $a . "/n" . $m_message . "/n" . $c "/n" . $d
                             )
                         )
                     	));

@@ -31,10 +31,11 @@ foreach ($client->parseEvents() as $event) {
             switch ($message['type']) {
                 case 'text':
                 	$m_message = $message['text'];
-                    $a = $message['id'];
-                    $b=$event['source'];
-                    $c=$b['userId'];
-                    $d=$event['timestamp'];
+                    $source=$event['source'];
+                    $type = $source['type']; 
+                    $id=$source['userId'];
+                    $roomid=$source['roomId'];
+                    $groupid=$source['groupId'];
                 	if($m_message!="")
                 	{
                 		$client->replyMessage(array(
@@ -42,7 +43,7 @@ foreach ($client->parseEvents() as $event) {
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => $a . $m_message . $c . $d
+                                'text' => "message: ".$m_message."\n"."roomid:".$roomid."\n"."time: ".date('Y-m-d h:i:sa')
                             )
                         )
                     	));

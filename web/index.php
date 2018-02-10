@@ -31,11 +31,11 @@ foreach ($client->parseEvents() as $event) {
             switch ($message['type']) {
                 case 'text':
                 	$m_message = $message['text'];
-                    $source=$event['source'];
-                    $type = $source['type']; 
-                    $id=$source['userId'];
-                    $roomid=$source['roomId'];
-                    $groupid=$source['groupId'];
+                	$source=$event['source'];
+              	      	$type = $source['type']; 
+              	      	$id=$source['userId'];
+                  	$roomid=$source['roomId'];
+             	       	$groupid=$source['groupId'];
                 	if($m_message!="")
                 	{
                 		$client->replyMessage(array(
@@ -51,13 +51,13 @@ foreach ($client->parseEvents() as $event) {
                     break;
                     
                     
-                    case "location" :
-				$content_type = "位置訊息";
-				$title = $receive->events[0]->message->title;
-				$address = $receive->events[0]->message->address;
-				$latitude = $receive->events[0]->message->latitude;
-				$longitude = $receive->events[0]->message->longitude;
-				$data = ["to" => $from, "messages" => array(["type" => "location", "title" => $title, "address" => $address, "latitude" => $latitude, "longitude" => $longitude])];
+                    case 'location' :
+			$content_type = "位置訊息";
+			$title = $receive->events[0]->message->title;
+			$address = $receive->events[0]->message->address;
+			$latitude = $receive->events[0]->message->latitude;
+			$longitude = $receive->events[0]->message->longitude;
+			$data = ["to" => $from, "messages" => array(["type" => "location", "title" => $title, "address" => $address, "latitude" => $latitude, "longitude" => $longitude])];
                     
                     if($m_message!="")
                 	{

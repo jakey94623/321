@@ -52,28 +52,25 @@ foreach ($client->parseEvents() as $event) {
                     
                     
                     case 'location' :
-			$content_type = "位置訊息";
-			$title = $receive->$event[0]->message->title;
-			$address = $receive->$event[0]->message->address;
-			$latitude = $receive->$event[0]->message->latitude;
-			$longitude = $receive->$event[0]->message->longitude;
-			$data = ["to" => $from, "messages" => array(["type" => "location", "title" => $title, "address" => $address, "latitude" => $latitude, "longitude" => $longitude])];
-                    
-                    if($m_message!="")
+			$m_message = $message['altText'];
+                	$source=$message['baseUrl'];
+              	      	$type = $message['type']; 
+              	      	$id=$message['baseSize'];
+                  	$roomid=$message['actions'];
+             	       	$groupid=$message['groupId'];
+                	if($m_message!="")
                 	{
                 		$client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
                             array(
-                                'type' => 'location',
-                                'location' => $content_type . $title . $address . $latitude . $longitude . $data
+                                'type' => 'text',
+                                'text' => $m_message . $source . $type . $id . $roomid . $groupid
                             )
                         )
                     	));
                 	}
-                    
-                    				break;
-
+                    break;
             }
             break;
         default:

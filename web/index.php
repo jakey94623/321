@@ -59,8 +59,8 @@ foreach ($client->parseEvents() as $event) {
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
                             array(
-                                'type' => 'text',
-                                'text' => $m_message
+                                'type' => 'location',
+                                'location' => $m_message
                             )
                         )
                     	));

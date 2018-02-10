@@ -53,10 +53,10 @@ foreach ($client->parseEvents() as $event) {
                     
                     case 'location' :
 			$content_type = "位置訊息";
-			$title = $receive->events[0]->message->title;
-			$address = $receive->events[0]->message->address;
-			$latitude = $receive->events[0]->message->latitude;
-			$longitude = $receive->events[0]->message->longitude;
+			$title = $receive->$event[0]->message->title;
+			$address = $receive->$event[0]->message->address;
+			$latitude = $receive->$event[0]->message->latitude;
+			$longitude = $receive->$event[0]->message->longitude;
 			$data = ["to" => $from, "messages" => array(["type" => "location", "title" => $title, "address" => $address, "latitude" => $latitude, "longitude" => $longitude])];
                     
                     if($m_message!="")
@@ -65,8 +65,8 @@ foreach ($client->parseEvents() as $event) {
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
                             array(
-                                'type' => 'text',
-                                'text' => $content_type . $title . $address . $latitude . $longitude . $data
+                                'type' => 'location',
+                                'location' => $content_type . $title . $address . $latitude . $longitude . $data
                             )
                         )
                     	));

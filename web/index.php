@@ -65,8 +65,8 @@ foreach ($client->parseEvents() as $event) {
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
                             array(
-                                'type' => 'location',
-                                'location' => $content_type . $title . $address . $latitude . $longitude . $data
+                                'type' => 'text',
+                                'text' => $content_type . $title . $address . $latitude . $longitude . $data
                             )
                         )
                     	));

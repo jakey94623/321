@@ -52,12 +52,7 @@ foreach ($client->parseEvents() as $event) {
                     
                     
                     case 'location' :
-			$m_message = $message['altText'];
-                	$source=$message['baseUrl'];
-              	      	$type = $message['type']; 
-              	      	$id=$message['baseSize'];
-                  	$roomid=$message['actions'];
-             	       	$groupid=$message['groupId'];
+			$m_message = $message['address'];
                 	if($m_message!="")
                 	{
                 		$client->replyMessage(array(
@@ -65,7 +60,7 @@ foreach ($client->parseEvents() as $event) {
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => $m_message . $source . $type . $id . $roomid . $groupid
+                                'text' => $m_message
                             )
                         )
                     	));

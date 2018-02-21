@@ -44,21 +44,20 @@ foreach ($client->parseEvents() as $event) {
                             array(
                                 'type' => 'text',
                                 'text' => $m_message ."\n" . $roomid."\n". date('Y-m-d h:i:sa') . "\n" . $id . "\n" . $groupid
-                            )
+                            ),
+				
+				array(
+        'type' => 'template',
+        'altText' => '為您推薦下列美食：',
+        'template' => array(
+          'type' => 'carousel',
+          'columns' => $result,
+        ),
+      ),
+				
+				
                         )
-                    	));
-				
-				
-				
-				$actions = array(
-  new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("是", "ans=Y"),
-  new \LINE\LINEBot\TemplateActionBuilder\PostbackTemplateActionBuilder("否", "ans=N")
-);
-$button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder("問題", $actions);
-$msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("這訊息要用手機的賴才看的到哦", $button);
-$bot->replyMessage($replyToken,$m_message);
-				
-				
+                    	));				
                 	}
                     break;
                     

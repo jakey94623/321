@@ -44,22 +44,26 @@ foreach ($client->parseEvents() as $event) {
                             array(
                                 'type' => 'text',
                                 'text' => $m_message ."\n" . $roomid."\n". date('Y-m-d h:i:sa') . "\n" . $id . "\n" . $groupid
-                            ),
-		$columns=$template['columns'];
+                            )	
+                        )
+                    	));			
+                	}else{
+                		$columns=$template['columns'];
 		$thumbnailImageUrl=$columns['thumbnailImageUrl'];
-				array(
+				
+				$client->replyMessage(array(
+  'replyToken' => $event['replyToken'],
+    'messages' => array(
+		array(
         'type' => 'template',
         'altText' => '為您推薦下列美食：',
         'template' => array(
           'type' => 'carousel',
           'columns' => $thumbnailImageUrl
-        ),
-      ),
-				
-				
-                        )
-                    	));				
-                	}
+        )
+      )
+			)
+                    	));}
                     break;
                     
                     

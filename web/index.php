@@ -50,7 +50,7 @@ foreach ($client->parseEvents() as $event) {
                 	}else{
 				$template=$event['template'];
               	      	$text = $template['text']; 
-				
+				$actions=$template['actions']; 
 				$client->replyMessage(array(
   'replyToken' => $event['replyToken'],
     'messages' => array(
@@ -59,7 +59,7 @@ foreach ($client->parseEvents() as $event) {
         'altText' => '為您推薦下列美食：',
         'template' => array(
           'type' => 'confirm',
-          'text' => $m_message
+          'text' => $actions	
         )
       )
 			)

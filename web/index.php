@@ -47,11 +47,7 @@ foreach ($client->parseEvents() as $event) {
                             )	
                         )
                     	));			
-                	}else{
-				$template=$event['template'];
-              	      	$text = $template['text']; 
-				$actions=$template['actions']; 
-				$label=$actions['label'];
+                	}else if($m_message=="123"){
 				
 				$client->replyMessage(array(
   'replyToken' => $event['replyToken'],

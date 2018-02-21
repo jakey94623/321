@@ -36,7 +36,7 @@ foreach ($client->parseEvents() as $event) {
               	      	$id=$source['userId'];
                   	$roomid=$source['roomId'];
              	       	$groupid=$source['groupId'];
-                	if($m_message="安安")
+                	if($m_message=="安安")
                 	{
                 		$client->replyMessage(array(
                         'replyToken' => $event['replyToken'],

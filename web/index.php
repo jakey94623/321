@@ -51,6 +51,8 @@ foreach ($client->parseEvents() as $event) {
 				$template=$event['template'];
               	      	$text = $template['text']; 
 				$actions=$template['actions']; 
+				$label=$actions['label']
+				
 				$client->replyMessage(array(
   'replyToken' => $event['replyToken'],
     'messages' => array(
@@ -59,7 +61,8 @@ foreach ($client->parseEvents() as $event) {
         'altText' => "你好啊",
         'template' => array(
           'type' => 'confirm',
-          'text' => $text	
+          'text' => $text,
+	'label' => $label
         )
       )
 			)

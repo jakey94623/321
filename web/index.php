@@ -56,7 +56,7 @@ foreach ($client->parseEvents() as $event) {
 );
 $button = new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ConfirmTemplateBuilder("問題", $actions);
 $msg = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder("這訊息要用手機的賴才看的到哦", $button);
-$bot->replyMessage($replyToken,$msg);
+$bot->replyMessage($replyToken,$m_message);
 				
 				
                 	}

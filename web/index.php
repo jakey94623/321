@@ -59,7 +59,7 @@ foreach ($client->parseEvents() as $event) {
         'altText' => '為您推薦下列美食：',
         'template' => array(
           'type' => 'confirm',
-          'text' => $text
+          'text' => $template
         )
       )
 			)

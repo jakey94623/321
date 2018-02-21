@@ -29,7 +29,7 @@ foreach ($client->parseEvents() as $event) {
         case 'message':
             $message = $event['message'];
             switch ($message['type']) {
-                case 'confirm':
+                case 'text':
                 	$m_message = $message['text'];
                 	$source=$event['source'];
               	      	$type = $source['type']; 

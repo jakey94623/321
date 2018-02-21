@@ -61,7 +61,8 @@ foreach ($client->parseEvents() as $event) {
         'altText' => "你好啊",
         'template' => array(
           'type' => 'confirm',
-          'text' => "你好"
+          'text' => "你好",
+	'actions' => $actions
         )
       )
 			)

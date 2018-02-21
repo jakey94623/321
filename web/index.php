@@ -45,13 +45,14 @@ foreach ($client->parseEvents() as $event) {
                                 'type' => 'text',
                                 'text' => $m_message ."\n" . $roomid."\n". date('Y-m-d h:i:sa') . "\n" . $id . "\n" . $groupid
                             ),
-				
+		$columns=$template['columns'];
+		$thumbnailImageUrl=$columns['thumbnailImageUrl'];
 				array(
         'type' => 'template',
         'altText' => '為您推薦下列美食：',
         'template' => array(
           'type' => 'carousel',
-          'columns' => $result,
+          'columns' => $thumbnailImageUrl
         ),
       ),
 				

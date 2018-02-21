@@ -56,10 +56,10 @@ foreach ($client->parseEvents() as $event) {
     'messages' => array(
 		array(
         'type' => 'template',
-        'altText' => '為您推薦下列美食：',
+        'altText' => "你好啊",
         'template' => array(
           'type' => 'confirm',
-          'text' => $actions	
+          'text' => $text	
         )
       )
 			)

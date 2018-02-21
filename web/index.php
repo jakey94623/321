@@ -51,7 +51,7 @@ foreach ($client->parseEvents() as $event) {
 				$template=$event['template'];
               	      	$text = $template['text']; 
 				$actions=$template['actions']; 
-				$label=$actions['label']
+				$label=$actions['label'];
 				
 				$client->replyMessage(array(
   'replyToken' => $event['replyToken'],

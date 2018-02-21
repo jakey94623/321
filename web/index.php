@@ -48,8 +48,8 @@ foreach ($client->parseEvents() as $event) {
                         )
                     	));			
                 	}else{
-                		$columns=$template['columns'];
-		$thumbnailImageUrl=$columns['thumbnailImageUrl'];
+				$template=$event['template'];
+              	      	$text = $template['text']; 
 				
 				$client->replyMessage(array(
   'replyToken' => $event['replyToken'],
@@ -58,8 +58,8 @@ foreach ($client->parseEvents() as $event) {
         'type' => 'template',
         'altText' => '為您推薦下列美食：',
         'template' => array(
-          'type' => 'carousel',
-          'columns' => $thumbnailImageUrl
+          'type' => 'confirm',
+          'text' => $text
         )
       )
 			)

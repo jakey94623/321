@@ -135,16 +135,3 @@ foreach ($client->parseEvents() as $event) {
     }
 };
 ?>
-func InputMsgHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("method:", r.Method)
-    if r.Method == "GET" {
-        t, _ := template.ParseFiles("InputLineMsg.gtpl")
-        t.Execute(w, nil)
-		//v := url.Values{}
-    } else {
-        r.ParseForm()
-        fmt.Println("User ID:", r.Form["method"])
-        fmt.Println("User ID:", r.Form["uid"])
-        fmt.Println("Message:", r.Form["msg"])
-    }		
-}

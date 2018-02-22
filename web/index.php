@@ -88,7 +88,7 @@ foreach ($client->parseEvents() as $event) {
                     'text' => 'Please select', // 文字
                     'actions' => array(
                         array(
-                            'type' => 'postback', // 類型 (回傳)
+                            'type' => 'message', // 類型 (回傳)
                             'label' => 'Postback example', // 標籤 1
                             'data' => 'action=buy&itemid=123' // 資料
                         ),
@@ -126,19 +126,8 @@ foreach ($client->parseEvents() as $event) {
                     	));
                 	}
                     break;
-            }func InputMsgHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("method:", r.Method)
-    if r.Method == "GET" {
-        t, _ := template.ParseFiles("InputLineMsg.gtpl")
-        t.Execute(w, nil)
-		//v := url.Values{}
-    } else {
-        r.ParseForm()
-        fmt.Println("User ID:", r.Form["method"])
-        fmt.Println("User ID:", r.Form["uid"])
-        fmt.Println("Message:", r.Form["msg"])
-    }		
-}
+            }
+		    
             break;
         default:
             error_log("Unsupporeted event type: " . $event['type']);

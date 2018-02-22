@@ -88,7 +88,7 @@ foreach ($client->parseEvents() as $event) {
                     'text' => 'Please select', // 文字
                     'actions' => array(
                         array(
-                            'type' => 'message', // 類型 (回傳)
+                            'type' => 'postback', // 類型 (回傳)
                             'label' => 'Postback example', // 標籤 1
                             'data' => 'action=buy&itemid=123' // 資料
                         ),

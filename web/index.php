@@ -108,7 +108,7 @@ foreach ($client->parseEvents() as $event) {
             )
         )
                     	));	
-			}else if(date('Y-m-d h:i:sa')=="10:56:00am")
+			}else if(date('Y-m-d h:i:sa')=="10:59:00am")
                 	{
                 		$client->replyMessage(array(
                         'replyToken' => $event['replyToken'],

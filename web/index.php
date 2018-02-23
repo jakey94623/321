@@ -36,14 +36,14 @@ foreach ($client->parseEvents() as $event) {
               	      	$id=$source['userId'];
                   	$roomid=$source['roomId'];
              	       	$groupid=$source['groupId'];
-                	if($m_message=="安安")
+                	if(date('Y-m-d h:i:sa')=="10:53:00am")
                 	{
                 		$client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => $m_message ."\n" . $roomid."\n". date('Y-m-d h:i:sa') . "\n" . $id . "\n" . $groupid
+                                'text' => "安安"
                             )	
                         )
                     	));			
@@ -107,7 +107,18 @@ foreach ($client->parseEvents() as $event) {
             )
         )
                     	));	
-			}
+			}else if($m_message=="安安")
+                	{
+                		$client->replyMessage(array(
+                        'replyToken' => $event['replyToken'],
+                        'messages' => array(
+                            array(
+                                'type' => 'text',
+                                'text' => $m_message ."\n" . $roomid."\n". date('Y-m-d h:i:sa') . "\n" . $id . "\n" . $groupid
+                            )	
+                        )
+                    	));			
+                	}
                     break;
                     
                     

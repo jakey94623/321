@@ -37,7 +37,7 @@ foreach ($client->parseEvents() as $event) {
                   	$roomid=$source['roomId'];
              	       	$groupid=$source['groupId'];
 			date_default_timezone_set('Asia/Taipei');
-                	if($m_message!="")
+                	if($id="U3c822c99099ebc65694c3b8401be9707")
                 	{
                 		$client->replyMessage(array(
                         'replyToken' => $event['replyToken'],

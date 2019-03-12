@@ -44,7 +44,7 @@ foreach ($client->parseEvents() as $event) {
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => $m_message ."\n" . $roomid."\n". date('Y-m-d h:i:sa') . "\n" . $id . "\n" . $groupid
+                                'text' => "現在時間" ."\n". date('Y-m-d h:i:sa') . "\n" 
                             )	
                         )
                     	));			

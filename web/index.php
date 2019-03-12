@@ -37,14 +37,14 @@ foreach ($client->parseEvents() as $event) {
                   	$roomid=$source['roomId'];
              	       	$groupid=$source['groupId'];
 			date_default_timezone_set('Asia/Taipei');
-                	if($m_message=="")
+                	if($m_message!="")
                 	{
                 		$client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => "現在時間日期:" ."\n" . date('Y-m-d h:i:sa') . "\n" 
+                                'text' => $m_message ."\n" . $roomid."\n". date('Y-m-d h:i:sa') . "\n" . $id . "\n" . $groupid
                             )	
                         )
                     	));			
